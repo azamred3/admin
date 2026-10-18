@@ -50,7 +50,6 @@ input,select,textarea{font-family:inherit;user-select:text}
 .side-btn:hover{background:var(--surface-2);color:var(--fg)}
 .side-btn.active{background:linear-gradient(135deg,rgba(255,107,0,.16),rgba(255,107,0,.045));color:var(--orange);box-shadow:inset 0 0 0 1px rgba(255,107,0,.24)}
 .side-badge{margin-inline-start:auto;min-width:20px;height:20px;padding:0 6px;border-radius:99px;background:rgba(255,107,0,.16);border:1px solid rgba(255,107,0,.3);color:var(--orange);font-size:10px;font-weight:800;display:grid;place-items:center;font-variant-numeric:tabular-nums}
-.side-badge.green{background:rgba(52,199,89,.16);border-color:rgba(52,199,89,.3);color:var(--green)}
 .side-foot{display:flex;flex-direction:column;gap:6px;padding-top:12px;border-top:1px solid var(--border-1)}
 .side-mini{display:flex;align-items:center;gap:9px;padding:9px 12px;border-radius:11px;background:var(--surface-1);border:1px solid var(--border-1);font-size:11.5px;font-weight:700;color:var(--fg-2);transition:.25s;width:100%;text-align:right;text-decoration:none}
 .side-mini i{font-size:12px;color:var(--fg-3);width:16px;text-align:center}
@@ -90,18 +89,15 @@ input,select,textarea{font-family:inherit;user-select:text}
 .kpi.amber .blob{background:radial-gradient(circle,rgba(255,204,0,.18),transparent 70%)}
 .kpi.green .blob{background:radial-gradient(circle,rgba(52,199,89,.18),transparent 70%)}
 .kpi.blue .blob{background:radial-gradient(circle,rgba(10,132,255,.16),transparent 70%)}
-.kpi.purple .blob{background:radial-gradient(circle,rgba(123,47,255,.18),transparent 70%)}
 .kpi .k-ico{position:absolute;top:14px;left:14px;font-size:12px;opacity:.5}
 .kpi.orange .k-ico{color:var(--orange)}
 .kpi.amber .k-ico{color:var(--amber)}
 .kpi.green .k-ico{color:var(--green)}
 .kpi.blue .k-ico{color:var(--blue)}
-.kpi.purple .k-ico{color:#9B6BFF}
 .kpi .k-val{position:relative;z-index:1;font-size:25px;font-weight:900;letter-spacing:-.045em;line-height:1;color:var(--fg);font-variant-numeric:tabular-nums}
 .kpi.orange .k-val{background:linear-gradient(180deg,var(--orange-2),var(--orange));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
 .kpi.green .k-val{background:linear-gradient(180deg,#5AE07A,var(--green));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
 .kpi.blue .k-val{background:linear-gradient(180deg,#5AAFFF,var(--blue));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
-.kpi.purple .k-val{background:linear-gradient(180deg,#B79BFF,#9B6BFF);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
 .kpi .k-lbl{margin-top:10px;font-size:9.5px;font-weight:800;color:var(--fg-2);letter-spacing:.13em;text-transform:uppercase;position:relative;z-index:1}
 .kpi .k-sub{margin-top:4px;font-size:10px;color:var(--fg-3);font-weight:600;position:relative;z-index:1}
 
@@ -119,7 +115,6 @@ input,select,textarea{font-family:inherit;user-select:text}
 .dist-fill.pending{background:linear-gradient(90deg,var(--amber),#FFE066)}
 .dist-fill.awaiting{background:linear-gradient(90deg,#FFB020,#FFD666)}
 .dist-fill.paid{background:linear-gradient(90deg,var(--green),#5AE07A)}
-.dist-fill.approved{background:linear-gradient(90deg,#5AE07A,var(--green))}
 .dist-fill.cancelled{background:linear-gradient(90deg,#8E8E93,#B0B0B5)}
 .dist-fill.completed{background:linear-gradient(90deg,var(--orange),var(--orange-2))}
 
@@ -131,6 +126,9 @@ input,select,textarea{font-family:inherit;user-select:text}
 .inp:focus{border-color:rgba(255,107,0,.5);background:var(--surface-2);box-shadow:0 0 0 3px rgba(255,107,0,.1)}
 .select{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='11' height='11' viewBox='0 0 24 24' fill='none' stroke='%238A8A8E' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:left 12px center;padding-left:34px;cursor:pointer}
 .textarea{min-height:88px;resize:vertical;padding-top:11px;padding-bottom:11px}
+.inp[type="date"]{text-align:right;font-size:13px}
+.inp[type="date"]::-webkit-calendar-picker-indicator{filter:invert(1);opacity:.6;cursor:pointer;margin-right:auto;margin-left:0}
+html.light .inp[type="date"]::-webkit-calendar-picker-indicator{filter:invert(0)}
 
 .filter-scroll{display:flex;gap:7px;overflow-x:auto;scrollbar-width:none;padding-bottom:2px}
 .filter-scroll::-webkit-scrollbar{display:none}
@@ -153,7 +151,6 @@ input,select,textarea{font-family:inherit;user-select:text}
 .status-pill.pending{background:rgba(255,204,0,.1);border-color:rgba(255,204,0,.24);color:var(--amber)}
 .status-pill.awaiting{background:rgba(255,176,32,.12);border-color:rgba(255,176,32,.3);color:#FFB020}
 .status-pill.paid{background:rgba(52,199,89,.12);border-color:rgba(52,199,89,.3);color:var(--green)}
-.status-pill.approved{background:rgba(52,199,89,.1);border-color:rgba(52,199,89,.24);color:var(--green)}
 .status-pill.cancelled{background:rgba(142,142,147,.14);border-color:rgba(142,142,147,.3);color:var(--fg-2)}
 .status-pill.completed{background:rgba(255,107,0,.12);border-color:rgba(255,107,0,.3);color:var(--orange-3)}
 .status-pill .spin{animation:spin 2.5s linear infinite}
@@ -184,7 +181,6 @@ input,select,textarea{font-family:inherit;user-select:text}
 .bk-btn.cash{background:rgba(255,204,0,.1);border:1px solid rgba(255,204,0,.28);color:var(--amber)}
 .bk-btn.cash:hover{background:rgba(255,204,0,.18);border-color:rgba(255,204,0,.5)}
 
-/* Fleet */
 .fleet-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:13px}
 .fl-card{border-radius:18px;overflow:hidden;background:var(--card-img-bg);border:1px solid var(--border-1);transition:.3s;display:flex;flex-direction:column}
 .fl-card:hover{transform:translateY(-3px);border-color:var(--border-2)}
@@ -216,13 +212,11 @@ input,select,textarea{font-family:inherit;user-select:text}
 .fl-stat{font-size:9.5px;font-weight:800;color:var(--fg-2);background:var(--surface-2);border:1px solid var(--border-1);padding:4px 9px;border-radius:99px;white-space:nowrap}
 .fl-stat b{color:var(--orange);font-weight:900}
 
-/* Item cards */
 .item-list{display:grid;gap:9px}
 .item-card{display:flex;align-items:center;gap:12px;padding:12px 14px;border-radius:14px;background:var(--card-body-bg);border:1px solid var(--border-1);transition:.2s}
 .item-card:hover{border-color:var(--border-2)}
 .item-icon{width:42px;height:42px;border-radius:12px;display:grid;place-items:center;background:rgba(255,107,0,.12);border:1px solid rgba(255,107,0,.22);color:var(--orange);font-size:14px;flex-shrink:0}
 .item-icon.muted{background:var(--surface-2);border-color:var(--border-1);color:var(--fg-3)}
-.item-icon.green{background:rgba(52,199,89,.12);border-color:rgba(52,199,89,.22);color:var(--green)}
 .item-body{flex:1;min-width:0}
 .item-body b{display:block;font-size:12.5px;font-weight:800;color:var(--fg);margin-bottom:3px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 .item-body small{display:block;font-size:10.5px;color:var(--fg-2);font-weight:600;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
@@ -254,6 +248,15 @@ input,select,textarea{font-family:inherit;user-select:text}
 .form-actions{display:flex;gap:8px;margin-top:14px}
 .form-actions .btn{flex:1}
 
+.total-box{padding:13px;border-radius:12px;background:linear-gradient(135deg,rgba(255,107,0,.1),rgba(255,107,0,.02));border:1px solid rgba(255,107,0,.28);display:flex;align-items:center;justify-content:space-between;gap:10px;margin-top:4px}
+.total-box .lbl b{display:block;font-size:11.5px;font-weight:800;color:var(--orange-3);margin-bottom:2px}
+.total-box .lbl small{display:block;font-size:9.5px;color:var(--fg-2);font-weight:600}
+.total-box .amt{display:flex;align-items:baseline;gap:4px}
+.total-box .amt b{font-size:22px;font-weight:900;color:var(--green);letter-spacing:-.04em;line-height:1;font-variant-numeric:tabular-nums}
+.total-box .amt small{font-size:10px;color:var(--green);font-weight:800}
+
+.discount-feedback{font-size:10.5px;font-weight:700;padding-inline-start:2px;min-height:14px}
+
 .empty{padding:46px 22px;border-radius:20px;background:var(--card-body-bg);border:1px dashed var(--border-2);text-align:center;grid-column:1/-1}
 .empty-ico{width:58px;height:58px;border-radius:17px;background:linear-gradient(135deg,rgba(255,107,0,.15),rgba(255,107,0,.02));border:1px solid rgba(255,107,0,.25);display:grid;place-items:center;margin:0 auto 15px;color:var(--orange);font-size:20px}
 .empty h3{margin:0 0 6px;font-size:14px;font-weight:800;letter-spacing:-.02em;color:var(--fg)}
@@ -272,7 +275,6 @@ input,select,textarea{font-family:inherit;user-select:text}
 .set-txt b{display:block;font-size:12.5px;font-weight:800;color:var(--fg);margin-bottom:2px}
 .set-txt small{display:block;font-size:10.5px;color:var(--fg-2);font-weight:600;line-height:1.5}
 
-/* Payment row */
 .pay-row{display:flex;align-items:center;gap:12px;padding:12px 14px;border-radius:14px;background:var(--card-body-bg);border:1px solid var(--border-1);transition:.2s}
 .pay-row:hover{border-color:var(--border-2)}
 .pay-ico{width:42px;height:42px;border-radius:12px;background:rgba(52,199,89,.12);border:1px solid rgba(52,199,89,.22);color:var(--green);display:grid;place-items:center;font-size:14px;flex-shrink:0}
@@ -283,14 +285,12 @@ input,select,textarea{font-family:inherit;user-select:text}
 .pay-amount b{font-size:14px;font-weight:900;color:var(--green);font-variant-numeric:tabular-nums}
 .pay-amount small{font-size:9px;color:var(--fg-3);font-weight:700}
 
-/* Reports */
 .mini-bar{margin-bottom:10px}
 .mini-bar .bar-top{display:flex;justify-content:space-between;margin-bottom:5px;font-size:11px;font-weight:700;color:var(--fg-2)}
 .mini-bar .bar-top b{color:var(--fg);font-variant-numeric:tabular-nums}
 .mini-bar .bar-track{height:8px;border-radius:99px;background:var(--surface-2);overflow:hidden}
 .mini-bar .bar-fill{height:100%;border-radius:99px;background:linear-gradient(90deg,var(--orange),var(--orange-2));transition:width .6s cubic-bezier(.2,1,.3,1)}
 
-/* Mobile */
 .mobile-header{display:none}
 .mobile-nav{display:none}
 @media (max-width:980px){
@@ -396,7 +396,6 @@ input,select,textarea{font-family:inherit;user-select:text}
 
 <div class="shell">
 
-  <!-- Sidebar -->
   <aside class="sidebar no-select">
     <div class="side-brand">
       <div class="brand-mark">شفل</div>
@@ -408,39 +407,18 @@ input,select,textarea{font-family:inherit;user-select:text}
 
     <nav class="side-nav">
       <div class="side-label">الإدارة</div>
-      <button class="side-btn active" data-view="dashboard" onclick="switchView('dashboard')">
-        <i class="fa-solid fa-gauge-high"></i><span>لوحة التحكم</span>
-      </button>
-      <button class="side-btn" data-view="bookings" onclick="switchView('bookings')">
-        <i class="fa-solid fa-receipt"></i><span>الحجوزات</span>
-        <span class="side-badge" id="pendingBadge" style="display:none">0</span>
-      </button>
-      <button class="side-btn" data-view="payments" onclick="switchView('payments')">
-        <i class="fa-solid fa-credit-card"></i><span>سجل المدفوعات</span>
-      </button>
-      <button class="side-btn" data-view="reports" onclick="switchView('reports')">
-        <i class="fa-solid fa-chart-line"></i><span>التقارير</span>
-      </button>
-      <button class="side-btn" data-view="fleet" onclick="switchView('fleet')">
-        <i class="fa-solid fa-car-side"></i><span>المركبات</span>
-      </button>
-      <button class="side-btn" data-view="categories" onclick="switchView('categories')">
-        <i class="fa-solid fa-tags"></i><span>الأقسام</span>
-      </button>
-      <button class="side-btn" data-view="companies" onclick="switchView('companies')">
-        <i class="fa-solid fa-building"></i><span>الشركات</span>
-      </button>
+      <button class="side-btn active" data-view="dashboard" onclick="switchView('dashboard')"><i class="fa-solid fa-gauge-high"></i><span>لوحة التحكم</span></button>
+      <button class="side-btn" data-view="bookings" onclick="switchView('bookings')"><i class="fa-solid fa-receipt"></i><span>الحجوزات</span><span class="side-badge" id="pendingBadge" style="display:none">0</span></button>
+      <button class="side-btn" data-view="payments" onclick="switchView('payments')"><i class="fa-solid fa-credit-card"></i><span>سجل المدفوعات</span></button>
+      <button class="side-btn" data-view="reports" onclick="switchView('reports')"><i class="fa-solid fa-chart-line"></i><span>التقارير</span></button>
+      <button class="side-btn" data-view="fleet" onclick="switchView('fleet')"><i class="fa-solid fa-car-side"></i><span>المركبات</span></button>
+      <button class="side-btn" data-view="categories" onclick="switchView('categories')"><i class="fa-solid fa-tags"></i><span>الأقسام</span></button>
+      <button class="side-btn" data-view="companies" onclick="switchView('companies')"><i class="fa-solid fa-building"></i><span>الشركات</span></button>
       <div class="side-label">البيانات</div>
-      <button class="side-btn" data-view="customers" onclick="switchView('customers')">
-        <i class="fa-solid fa-users"></i><span>العملاء</span>
-      </button>
-      <button class="side-btn" data-view="discounts" onclick="switchView('discounts')">
-        <i class="fa-solid fa-percent"></i><span>الخصومات</span>
-      </button>
+      <button class="side-btn" data-view="customers" onclick="switchView('customers')"><i class="fa-solid fa-users"></i><span>العملاء</span></button>
+      <button class="side-btn" data-view="discounts" onclick="switchView('discounts')"><i class="fa-solid fa-percent"></i><span>الخصومات</span></button>
       <div class="side-label">النظام</div>
-      <button class="side-btn" data-view="settings" onclick="switchView('settings')">
-        <i class="fa-solid fa-gear"></i><span>الإعدادات</span>
-      </button>
+      <button class="side-btn" data-view="settings" onclick="switchView('settings')"><i class="fa-solid fa-gear"></i><span>الإعدادات</span></button>
     </nav>
 
     <div class="side-foot">
@@ -451,21 +429,16 @@ input,select,textarea{font-family:inherit;user-select:text}
     </div>
   </aside>
 
-  <!-- Main -->
   <main class="main">
-
     <header class="mobile-header">
       <div class="hdr-pill no-select">
         <div class="brand" style="display:flex;align-items:center;gap:10px">
           <div class="brand-mark">شفل</div>
-          <div class="brand-text">
-            <b>شفل <span>SHUFF</span></b>
-            <small>ADMIN</small>
-          </div>
+          <div class="brand-text"><b>شفل <span>SHUFF</span></b><small>ADMIN</small></div>
         </div>
         <div class="hdr-actions">
-          <button class="hdr-btn" onclick="toggleTheme()" aria-label="تبديل الوضع"><i class="fa-solid fa-sun theme-icon"></i></button>
-          <button class="hdr-btn" onclick="refreshData()" aria-label="تحديث"><i class="fa-solid fa-rotate"></i></button>
+          <button class="hdr-btn" onclick="toggleTheme()"><i class="fa-solid fa-sun theme-icon"></i></button>
+          <button class="hdr-btn" onclick="refreshData()"><i class="fa-solid fa-rotate"></i></button>
         </div>
       </div>
     </header>
@@ -488,10 +461,8 @@ input,select,textarea{font-family:inherit;user-select:text}
             <div class="dist" id="distBox"></div>
           </div>
           <div class="panel">
-            <div class="panel-head">
-              <div><h2>أحدث الحجوزات</h2><p>آخر 5 طلبات واردة</p></div>
-              <button class="link" onclick="switchView('bookings')">الكل <i class="fa-solid fa-arrow-left"></i></button>
-            </div>
+            <div class="panel-head"><div><h2>أحدث الحجوزات</h2><p>آخر 5 طلبات واردة</p></div>
+              <button class="link" onclick="switchView('bookings')">الكل <i class="fa-solid fa-arrow-left"></i></button></div>
             <div id="recentBox" style="display:flex;flex-direction:column;gap:9px"></div>
           </div>
         </div>
@@ -500,10 +471,10 @@ input,select,textarea{font-family:inherit;user-select:text}
       <!-- Bookings -->
       <section id="view-bookings" class="view">
         <div class="page-head">
-          <div><h1>الحجوزات</h1><p>اعتماد وإرسال رابط الدفع للعميل</p></div>
+          <div><h1>الحجوزات</h1><p>أنشئ، عدّل، واعتمد الحجوزات</p></div>
           <div class="head-actions">
+            <button class="add-btn" onclick="openForm('booking')"><i class="fa-solid fa-plus"></i> إضافة حجز</button>
             <button class="btn soft" onclick="exportBookingsCSV()"><i class="fa-solid fa-file-csv"></i> CSV</button>
-            <button class="btn soft" onclick="exportData()"><i class="fa-solid fa-download"></i> نسخة احتياطية</button>
           </div>
         </div>
         <div class="toolbar">
@@ -522,7 +493,7 @@ input,select,textarea{font-family:inherit;user-select:text}
       <!-- Payments -->
       <section id="view-payments" class="view">
         <div class="page-head">
-          <div><h1>سجل المدفوعات</h1><p>جميع المدفوعات المسجلة من صفحة الدفع</p></div>
+          <div><h1>سجل المدفوعات</h1><p>جميع المدفوعات المسجلة</p></div>
           <div class="head-actions">
             <button class="btn soft" onclick="exportPaymentsCSV()"><i class="fa-solid fa-file-csv"></i> CSV</button>
           </div>
@@ -536,149 +507,100 @@ input,select,textarea{font-family:inherit;user-select:text}
 
       <!-- Reports -->
       <section id="view-reports" class="view">
-        <div class="page-head">
-          <div><h1>التقارير</h1><p>تحليلات الإيرادات وأداء المركبات</p></div>
-        </div>
+        <div class="page-head"><div><h1>التقارير</h1><p>تحليلات الإيرادات وأداء المركبات</p></div></div>
         <div class="kpi-grid" id="reportStats"></div>
         <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px">
-          <div class="panel">
-            <div class="panel-head"><div><h2>الإيرادات الشهرية</h2><p>آخر 6 أشهر من المدفوعات</p></div></div>
-            <div id="monthlyRevenue"></div>
-          </div>
-          <div class="panel">
-            <div class="panel-head"><div><h2>أعلى 5 مركبات</h2><p>حسب إجمالي الإيراد</p></div></div>
-            <div id="topCars"></div>
-          </div>
+          <div class="panel"><div class="panel-head"><div><h2>الإيرادات الشهرية</h2><p>آخر 6 أشهر</p></div></div><div id="monthlyRevenue"></div></div>
+          <div class="panel"><div class="panel-head"><div><h2>أعلى 5 مركبات</h2><p>حسب إجمالي الإيراد</p></div></div><div id="topCars"></div></div>
         </div>
-        <div class="panel">
-          <div class="panel-head"><div><h2>معدل التحويل</h2><p>نسبة الحجوزات المدفوعة من الإجمالي</p></div></div>
-          <div class="dist" id="conversionBox"></div>
-        </div>
+        <div class="panel"><div class="panel-head"><div><h2>معدل التحويل</h2><p>نسبة الحجوزات المدفوعة</p></div></div><div class="dist" id="conversionBox"></div></div>
       </section>
 
-      <!-- Fleet (المركبات) -->
+      <!-- Fleet -->
       <section id="view-fleet" class="view">
         <div class="page-head">
           <div><h1>المركبات</h1><p>إدارة السيارات المتاحة في الموقع</p></div>
-          <div class="head-actions">
-            <button class="add-btn" onclick="openForm('car')"><i class="fa-solid fa-plus"></i> إضافة مركبة</button>
-          </div>
+          <div class="head-actions"><button class="add-btn" onclick="openForm('car')"><i class="fa-solid fa-plus"></i> إضافة مركبة</button></div>
         </div>
-        <div class="note">
-          <i class="fa-solid fa-circle-info"></i>
-          <span>المركبات المضافة هنا تظهر مباشرة في موقع <b>home.html</b> بعد تحديثه (البيانات في <code>shuff_cars</code>).</span>
-        </div>
+        <div class="note"><i class="fa-solid fa-circle-info"></i><span>المركبات المضافة هنا تظهر في <b>home.html</b> بعد التحديث (البيانات في <code>shuff_cars</code>).</span></div>
         <div class="filter-scroll no-select" id="fleetFilters" style="margin-bottom:14px"></div>
         <div class="fleet-grid" id="fleetGrid"></div>
       </section>
 
       <!-- Categories -->
       <section id="view-categories" class="view">
-        <div class="page-head">
-          <div><h1>أقسام المركبات</h1><p>فئات السيارات في الموقع (اقتصادية، عائلية...)</p></div>
-          <div class="head-actions">
-            <button class="add-btn" onclick="openForm('category')"><i class="fa-solid fa-plus"></i> إضافة قسم</button>
-          </div>
-        </div>
-        <div class="panel">
-          <div class="item-list" id="categoriesList"></div>
-        </div>
+        <div class="page-head"><div><h1>أقسام المركبات</h1><p>فئات السيارات</p></div>
+          <div class="head-actions"><button class="add-btn" onclick="openForm('category')"><i class="fa-solid fa-plus"></i> إضافة قسم</button></div></div>
+        <div class="panel"><div class="item-list" id="categoriesList"></div></div>
       </section>
 
       <!-- Companies -->
       <section id="view-companies" class="view">
-        <div class="page-head">
-          <div><h1>شركات المركبات</h1><p>العلامات التجارية (تويوتا، مرسيدس...)</p></div>
-          <div class="head-actions">
-            <button class="add-btn" onclick="openForm('company')"><i class="fa-solid fa-plus"></i> إضافة شركة</button>
-          </div>
-        </div>
-        <div class="panel">
-          <div class="item-list" id="companiesList"></div>
-        </div>
+        <div class="page-head"><div><h1>شركات المركبات</h1><p>العلامات التجارية</p></div>
+          <div class="head-actions"><button class="add-btn" onclick="openForm('company')"><i class="fa-solid fa-plus"></i> إضافة شركة</button></div></div>
+        <div class="panel"><div class="item-list" id="companiesList"></div></div>
       </section>
 
       <!-- Customers -->
       <section id="view-customers" class="view">
-        <div class="page-head">
-          <div><h1>العملاء</h1><p>قاعدة بيانات العملاء المسجلين</p></div>
-          <div class="head-actions">
-            <button class="add-btn" onclick="openForm('customer')"><i class="fa-solid fa-plus"></i> إضافة عميل</button>
-          </div>
-        </div>
-        <div class="panel">
-          <div class="panel-head"><div><h2>العملاء المسجلون</h2><p id="customersCount">—</p></div></div>
-          <div class="item-list" id="customersList"></div>
-        </div>
-        <div class="panel">
-          <div class="panel-head"><div><h2>عملاء من الحجوزات</h2><p>مستخرج تلقائياً من بيانات الحجوزات الواردة</p></div></div>
-          <div class="item-list" id="customersFromBookings"></div>
-        </div>
+        <div class="page-head"><div><h1>العملاء</h1><p>قاعدة بيانات العملاء</p></div>
+          <div class="head-actions"><button class="add-btn" onclick="openForm('customer')"><i class="fa-solid fa-plus"></i> إضافة عميل</button></div></div>
+        <div class="panel"><div class="panel-head"><div><h2>العملاء المسجلون</h2><p id="customersCount">—</p></div></div><div class="item-list" id="customersList"></div></div>
+        <div class="panel"><div class="panel-head"><div><h2>عملاء من الحجوزات</h2><p>مستخرج تلقائياً</p></div></div><div class="item-list" id="customersFromBookings"></div></div>
       </section>
 
       <!-- Discounts -->
       <section id="view-discounts" class="view">
-        <div class="page-head">
-          <div><h1>الخصومات</h1><p>أكواد خصم فعّالة في نموذج الحجز</p></div>
-          <div class="head-actions">
-            <button class="add-btn" onclick="openForm('discount')"><i class="fa-solid fa-plus"></i> إضافة خصم</button>
-          </div>
-        </div>
-        <div class="note">
-          <i class="fa-solid fa-circle-info"></i>
-          <span>الأكواد النشطة تُقرأ تلقائياً من <code>shuff_discounts</code>. عند إدخال الكود في نموذج الحجز بـ <b>home.html</b> يُخصم تلقائياً.</span>
-        </div>
-        <div class="panel">
-          <div class="item-list" id="discountsList"></div>
-        </div>
+        <div class="page-head"><div><h1>الخصومات</h1><p>أكواد خصم فعّالة</p></div>
+          <div class="head-actions"><button class="add-btn" onclick="openForm('discount')"><i class="fa-solid fa-plus"></i> إضافة خصم</button></div></div>
+        <div class="note"><i class="fa-solid fa-circle-info"></i><span>الأكواد النشطة تُقرأ تلقائياً في <b>home.html</b> وصفحة الدفع.</span></div>
+        <div class="panel"><div class="item-list" id="discountsList"></div></div>
       </section>
 
       <!-- Settings -->
       <section id="view-settings" class="view">
-        <div class="page-head">
-          <div><h1>الإعدادات</h1><p>المظهر وإدارة البيانات</p></div>
-        </div>
+        <div class="page-head"><div><h1>الإعدادات</h1><p>المظهر وإدارة البيانات</p></div></div>
         <div class="panel">
-          <div class="panel-head"><div><h2>المظهر</h2><p>يُحفظ في نفس مفتاح الموقع</p></div></div>
+          <div class="panel-head"><div><h2>المظهر</h2></div></div>
           <div class="set-row">
             <div class="set-ico orange"><i class="fa-solid fa-circle-half-stroke"></i></div>
-            <div class="set-txt"><b>الوضع الليلي</b><small id="themeState">مُفعّل</small></div>
+            <div class="set-txt"><b>الوضع الليلي</b><small id="themeState">—</small></div>
             <button class="btn soft" onclick="toggleTheme()"><i class="fa-solid fa-arrows-rotate"></i> تبديل</button>
           </div>
         </div>
         <div class="panel">
-          <div class="panel-head"><div><h2>البيانات</h2><p>مخزنة محلياً في المتصفح (localStorage)</p></div></div>
+          <div class="panel-head"><div><h2>البيانات</h2><p>مخزنة محلياً (localStorage)</p></div></div>
           <div class="set-row">
             <div class="set-ico green"><i class="fa-solid fa-database"></i></div>
             <div class="set-txt"><b>حجم البيانات</b><small id="storageInfo">—</small></div>
           </div>
           <div class="set-row">
             <div class="set-ico orange"><i class="fa-solid fa-file-export"></i></div>
-            <div class="set-txt"><b>تصدير نسخة احتياطية</b><small>تنزيل جميع البيانات بصيغة JSON</small></div>
+            <div class="set-txt"><b>تصدير نسخة احتياطية</b><small>تنزيل JSON</small></div>
             <button class="btn soft" onclick="exportData()"><i class="fa-solid fa-download"></i> تصدير</button>
           </div>
           <div class="set-row">
             <div class="set-ico orange"><i class="fa-solid fa-file-import"></i></div>
-            <div class="set-txt"><b>استيراد نسخة احتياطية</b><small>استعادة البيانات من ملف JSON سابق</small></div>
+            <div class="set-txt"><b>استيراد نسخة احتياطية</b><small>استعادة من JSON</small></div>
             <button class="btn soft" onclick="document.getElementById('importInput').click()"><i class="fa-solid fa-upload"></i> استيراد</button>
             <input type="file" id="importInput" accept=".json,application/json" style="display:none" onchange="importBackup(event)">
           </div>
           <div class="set-row">
             <div class="set-ico orange"><i class="fa-solid fa-file-csv"></i></div>
-            <div class="set-txt"><b>تصدير الحجوزات CSV</b><small>ملف جدولي يفتح في Excel</small></div>
+            <div class="set-txt"><b>تصدير الحجوزات CSV</b><small>ملف Excel</small></div>
             <button class="btn soft" onclick="exportBookingsCSV()"><i class="fa-solid fa-download"></i> CSV</button>
           </div>
           <div class="set-row">
             <div class="set-ico red"><i class="fa-solid fa-trash-can"></i></div>
-            <div class="set-txt"><b>حذف جميع الحجوزات</b><small>إجراء نهائي — يُنصح بالتصدير أولاً</small></div>
+            <div class="set-txt"><b>حذف جميع الحجوزات</b><small>إجراء نهائي</small></div>
             <button class="btn danger" onclick="askClearAll()"><i class="fa-solid fa-trash-can"></i> حذف</button>
           </div>
         </div>
         <div class="panel">
-          <div class="panel-head"><div><h2>الحساب</h2><p>الخروج من لوحة التحكم</p></div></div>
+          <div class="panel-head"><div><h2>الحساب</h2></div></div>
           <div class="set-row">
             <div class="set-ico red"><i class="fa-solid fa-arrow-right-from-bracket"></i></div>
-            <div class="set-txt"><b>تسجيل الخروج</b><small>العودة إلى صفحة الموقع</small></div>
+            <div class="set-txt"><b>تسجيل الخروج</b><small>العودة إلى الموقع</small></div>
             <button class="btn danger" onclick="handleLogout()"><i class="fa-solid fa-arrow-right-from-bracket"></i> خروج</button>
           </div>
         </div>
@@ -688,7 +610,6 @@ input,select,textarea{font-family:inherit;user-select:text}
   </main>
 </div>
 
-<!-- Mobile nav -->
 <nav class="mobile-nav no-select">
   <button class="nav-btn active" data-view="dashboard" onclick="switchView('dashboard')"><i class="fa-solid fa-gauge-high"></i><span>الرئيسية</span></button>
   <button class="nav-btn" data-view="bookings" onclick="switchView('bookings')"><i class="fa-solid fa-receipt"></i><span>الحجوزات</span></button>
@@ -702,34 +623,30 @@ input,select,textarea{font-family:inherit;user-select:text}
   <button class="nav-btn" data-view="settings" onclick="switchView('settings')"><i class="fa-solid fa-gear"></i><span>الإعدادات</span></button>
 </nav>
 
-<!-- Detail sheet -->
 <div id="detailSheet" class="sheet-bg">
   <div class="sheet" id="detailInner">
     <div class="sheet-handle" onclick="closeDetails()"></div>
-    <button class="sheet-close" onclick="closeDetails()" aria-label="إغلاق"><i class="fa-solid fa-xmark"></i></button>
+    <button class="sheet-close" onclick="closeDetails()"><i class="fa-solid fa-xmark"></i></button>
     <div id="detailBody"></div>
   </div>
 </div>
 
-<!-- Form sheet -->
 <div id="formSheet" class="sheet-bg">
   <div class="sheet" id="formInner">
     <div class="sheet-handle" onclick="closeForm()"></div>
-    <button class="sheet-close" onclick="closeForm()" aria-label="إغلاق"><i class="fa-solid fa-xmark"></i></button>
+    <button class="sheet-close" onclick="closeForm()"><i class="fa-solid fa-xmark"></i></button>
     <div id="formBody"></div>
   </div>
 </div>
 
-<!-- Pay link sheet -->
 <div id="payLinkSheet" class="sheet-bg">
   <div class="sheet" id="payLinkInner">
     <div class="sheet-handle" onclick="closePayLink()"></div>
-    <button class="sheet-close" onclick="closePayLink()" aria-label="إغلاق"><i class="fa-solid fa-xmark"></i></button>
+    <button class="sheet-close" onclick="closePayLink()"><i class="fa-solid fa-xmark"></i></button>
     <div id="payLinkBody"></div>
   </div>
 </div>
 
-<!-- Confirm -->
 <div id="confirmDialog" class="confirm-bg">
   <div class="confirm-box">
     <div class="confirm-icon" id="confirmIconWrap"><i id="confirmIcon" class="fa-solid fa-triangle-exclamation"></i></div>
@@ -743,7 +660,6 @@ input,select,textarea{font-family:inherit;user-select:text}
   </div>
 </div>
 
-<!-- Toast -->
 <div id="toast" class="toast">
   <i id="toastIcon" class="fa-solid fa-circle-check" style="color:var(--green)"></i>
   <span id="toastMsg">تم</span>
@@ -752,15 +668,9 @@ input,select,textarea{font-family:inherit;user-select:text}
 <script>
 'use strict';
 
-/* ═════════ Keys ═════════ */
-const KEYS = {
-  theme:'shuff_theme', profile:'shuff_profile', bookings:'shuff_bookings',
-  cars:'shuff_cars', categories:'shuff_categories', companies:'shuff_companies',
-  customers:'shuff_customers', discounts:'shuff_discounts', payments:'shuff_payments'
-};
+const KEYS = { theme:'shuff_theme', profile:'shuff_profile', bookings:'shuff_bookings', cars:'shuff_cars', categories:'shuff_categories', companies:'shuff_companies', customers:'shuff_customers', discounts:'shuff_discounts', payments:'shuff_payments' };
 const COLLECTION = { car:'cars', category:'categories', company:'companies', customer:'customers', discount:'discounts' };
 
-/* ═════════ Defaults ═════════ */
 const DEFAULT_CATEGORIES = [
   { id:'cat_economy', key:'economy', label:'اقتصادية', icon:'fa-coins' },
   { id:'cat_sedan', key:'sedan', label:'سيدان', icon:'fa-car' },
@@ -768,70 +678,51 @@ const DEFAULT_CATEGORIES = [
   { id:'cat_luxury', key:'luxury', label:'فاخرة', icon:'fa-gem' }
 ];
 const DEFAULT_COMPANIES = [
-  { id:'comp_toyota', name:'تويوتا' },
-  { id:'comp_mercedes', name:'مرسيدس' },
-  { id:'comp_bmw', name:'BMW' },
-  { id:'comp_hyundai', name:'هيونداي' },
+  { id:'comp_toyota', name:'تويوتا' }, { id:'comp_mercedes', name:'مرسيدس' },
+  { id:'comp_bmw', name:'BMW' }, { id:'comp_hyundai', name:'هيونداي' },
   { id:'comp_porsche', name:'بورش' }
 ];
 const DEFAULT_CARS = [
   { id:1, name:"مرسيدس S-Class 2024", category:'luxury', categoryLabel:"فاخرة", company:'مرسيدس', price:1800, status:'available',
-    image:"https://images.unsplash.com/photo-1618843479313-40f8afb4b4d8?w=900&q=80&auto=format&fit=crop",
-    badge:"الأكثر طلباً", transmission:"أوتوماتيك", passengers:"5 مقاعد", engine:"V8" },
+    image:"https://images.unsplash.com/photo-1618843479313-40f8afb4b4d8?w=900&q=80&auto=format&fit=crop", badge:"الأكثر طلباً", transmission:"أوتوماتيك", passengers:"5 مقاعد", engine:"V8" },
   { id:2, name:"بي إم دبليو الفئة السابعة", category:'luxury', categoryLabel:"فاخرة", company:'BMW', price:1650, status:'available',
-    image:"https://images.unsplash.com/photo-1555215695-3004980ad54e?w=900&q=80&auto=format&fit=crop",
-    badge:"VIP", transmission:"أوتوماتيك", passengers:"5 مقاعد", engine:"V6" },
+    image:"https://images.unsplash.com/photo-1555215695-3004980ad54e?w=900&q=80&auto=format&fit=crop", badge:"VIP", transmission:"أوتوماتيك", passengers:"5 مقاعد", engine:"V6" },
   { id:3, name:"تويوتا كامري 2024", category:'sedan', categoryLabel:"سيدان", company:'تويوتا', price:220, status:'available',
-    image:"https://syarah.com/carsguide/wp-content/uploads/2023/06/%D9%83%D8%A7%D9%85%D8%B1%D9%8A-2024.webp",
-    badge:"اقتصادية", transmission:"أوتوماتيك", passengers:"5 مقاعد", engine:"4 سلندر" },
+    image:"https://syarah.com/carsguide/wp-content/uploads/2023/06/%D9%83%D8%A7%D9%85%D8%B1%D9%8A-2024.webp", badge:"اقتصادية", transmission:"أوتوماتيك", passengers:"5 مقاعد", engine:"4 سلندر" },
   { id:4, name:"اكسنت 2024", category:'economy', categoryLabel:"اقتصادية", company:'هيونداي', price:170, status:'available',
-    image:"https://www.autopediame.com/storage/images/Hyundai/accent/2024/Hyundai%20Accent%202024%20side%20view%20.jpg",
-    badge:"أفضل سعر", transmission:"أوتوماتيك", passengers:"5 مقاعد", engine:"1.6 لتر" },
+    image:"https://www.autopediame.com/storage/images/Hyundai/accent/2024/Hyundai%20Accent%202024%20side%20view%20.jpg", badge:"أفضل سعر", transmission:"أوتوماتيك", passengers:"5 مقاعد", engine:"1.6 لتر" },
   { id:5, name:"هيونداي ستاريا", category:'suv', categoryLabel:"عائلية", company:'هيونداي', price:850, status:'available',
-    image:"https://www.alromaihcars.com/_next/image?url=https://cdn.alromaihcars.com/car-media/2025/09/staria-2025-thumbnail-photo-20250903-8833b6.jpg&w=1536&q=75",
-    badge:"عائلية", transmission:"أوتوماتيك", passengers:"7 مقاعد", engine:"V8" },
+    image:"https://www.alromaihcars.com/_next/image?url=https://cdn.alromaihcars.com/car-media/2025/09/staria-2025-thumbnail-photo-20250903-8833b6.jpg&w=1536&q=75", badge:"عائلية", transmission:"أوتوماتيك", passengers:"7 مقاعد", engine:"V8" },
   { id:7, name:"هيونداي كريتا", category:'suv', categoryLabel:"عائلية", company:'هيونداي', price:850, status:'available',
-    image:"https://karaa.b-cdn.net/wp-content/uploads/2025/04/%D9%83%D8%B1%D9%8A%D8%AA%D8%A7.png",
-    badge:"عائلية", transmission:"أوتوماتيك", passengers:"7 مقاعد", engine:"V8" },
+    image:"https://karaa.b-cdn.net/wp-content/uploads/2025/04/%D9%83%D8%B1%D9%8A%D8%AA%D8%A7.png", badge:"عائلية", transmission:"أوتوماتيك", passengers:"7 مقاعد", engine:"V8" },
   { id:6, name:"بورش باناميرا 2024", category:'luxury', categoryLabel:"فاخرة ورياضية", company:'بورش', price:2200, status:'available',
-    image:"https://images.unsplash.com/photo-1614162692292-7ac56d7f7f1e?w=900&q=80&auto=format&fit=crop",
-    badge:"سبورت", transmission:"أوتوماتيك", passengers:"4 مقاعد", engine:"V6 TT" }
+    image:"https://images.unsplash.com/photo-1614162692292-7ac56d7f7f1e?w=900&q=80&auto=format&fit=crop", badge:"سبورت", transmission:"أوتوماتيك", passengers:"4 مقاعد", engine:"V6 TT" }
 ];
 
-/* ═════════ Statuses ═════════ */
-const ST_PENDING='قيد المراجعة';
-const ST_AWAITING='بانتظار الدفع';
-const ST_PAID='مدفوع';
-const ST_APPROVED='معتمد';
-const ST_COMPLETED='مكتمل';
-const ST_CANCELLED='ملغي';
-
+const ST_PENDING='قيد المراجعة', ST_AWAITING='بانتظار الدفع', ST_PAID='مدفوع', ST_APPROVED='معتمد', ST_COMPLETED='مكتمل', ST_CANCELLED='ملغي';
 const STATUS_META = {
-  [ST_PENDING]:  { cls:'pending',   icon:'fa-circle-notch',  spin:true },
-  [ST_AWAITING]: { cls:'awaiting',  icon:'fa-clock',         spin:true },
-  [ST_PAID]:     { cls:'paid',      icon:'fa-circle-check',  spin:false },
-  [ST_APPROVED]: { cls:'approved',  icon:'fa-check-double',  spin:false },
-  [ST_COMPLETED]:{ cls:'completed', icon:'fa-flag-checkered',spin:false },
-  [ST_CANCELLED]:{ cls:'cancelled', icon:'fa-ban',           spin:false }
+  [ST_PENDING]:{cls:'pending',icon:'fa-circle-notch',spin:true},
+  [ST_AWAITING]:{cls:'awaiting',icon:'fa-clock',spin:true},
+  [ST_PAID]:{cls:'paid',icon:'fa-circle-check',spin:false},
+  [ST_APPROVED]:{cls:'approved',icon:'fa-check-double',spin:false},
+  [ST_COMPLETED]:{cls:'completed',icon:'fa-flag-checkered',spin:false},
+  [ST_CANCELLED]:{cls:'cancelled',icon:'fa-ban',spin:false}
 };
 function metaOf(s){ return STATUS_META[s] || STATUS_META[ST_PENDING]; }
-
 const CAR_STATUS = {
-  available:   { label:'متاحة',   icon:'fa-circle-check', cls:'available' },
-  rented:      { label:'مؤجرة',   icon:'fa-key',          cls:'rented' },
-  maintenance: { label:'صيانة',   icon:'fa-wrench',       cls:'maintenance' }
+  available:{label:'متاحة',icon:'fa-circle-check',cls:'available'},
+  rented:{label:'مؤجرة',icon:'fa-key',cls:'rented'},
+  maintenance:{label:'صيانة',icon:'fa-wrench',cls:'maintenance'}
 };
 function carStatusOf(s){ return CAR_STATUS[s] || CAR_STATUS.available; }
 
-/* ═════════ State ═════════ */
 const state = {
   view:'dashboard', bookings:[], payments:[], profile:{},
   cars:[], categories:[], companies:[], customers:[], discounts:[],
   statusFilter:'all', fleetFilter:'all', search:'', pendingAction:null,
-  form:{ type:null, id:null }
+  form:{ type:null, id:null }, bookingCalc:null
 };
 
-/* ═════════ Utils ═════════ */
 function $(id){ return document.getElementById(id); }
 function esc(v){ return String(v==null?'':v).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c])); }
 function fmt(n){ const x=Number(n); return Number.isFinite(x)?x.toLocaleString('en-US'):'0'; }
@@ -839,19 +730,15 @@ function nowTime(){ return new Date().toLocaleTimeString('ar-SA',{hour:'2-digit'
 function clone(o){ return JSON.parse(JSON.stringify(o)); }
 function genId(prefix){ return prefix + '_' + Date.now().toString(36) + Math.random().toString(36).slice(2,6); }
 function pad2(n){ return String(n).padStart(2,'0'); }
+function todayStr(){ const d=new Date(); return d.getFullYear()+'-'+pad2(d.getMonth()+1)+'-'+pad2(d.getDate()); }
 
-/* ═════════ Storage ═════════ */
 function loadCollection(key, def){
-  try{
-    const raw = localStorage.getItem(key);
-    if(!raw) return clone(def);
-    const p = JSON.parse(raw);
-    return Array.isArray(p) ? p : clone(def);
-  }catch(e){ return clone(def); }
+  try{ const raw=localStorage.getItem(key); if(!raw) return clone(def); const p=JSON.parse(raw); return Array.isArray(p)?p:clone(def); }
+  catch(e){ return clone(def); }
 }
 function saveCollection(key, arr){
   try{ localStorage.setItem(key, JSON.stringify(arr)); return true; }
-  catch(e){ showToast('تعذّر الحفظ — المساحة ممتلئة', 'error'); return false; }
+  catch(e){ showToast('تعذّر الحفظ', 'error'); return false; }
 }
 function ensureSeed(){
   if(!localStorage.getItem(KEYS.cars)) saveCollection(KEYS.cars, DEFAULT_CARS);
@@ -863,7 +750,7 @@ function ensureSeed(){
 }
 function loadAll(){
   ensureSeed();
-  try{ const p = localStorage.getItem(KEYS.profile); state.profile = p ? JSON.parse(p) : {}; }catch(e){ state.profile = {}; }
+  try{ const p=localStorage.getItem(KEYS.profile); state.profile=p?JSON.parse(p):{}; }catch(e){ state.profile={}; }
   state.bookings = loadCollection(KEYS.bookings, []).filter(b => b && typeof b === 'object');
   state.payments = loadCollection(KEYS.payments, []).filter(p => p && typeof p === 'object');
   state.cars = loadCollection(KEYS.cars, DEFAULT_CARS);
@@ -874,32 +761,24 @@ function loadAll(){
 }
 function persistBookings(){ return saveCollection(KEYS.bookings, state.bookings); }
 
-/* ═════════ Theme ═════════ */
-function initTheme(){
-  const saved = localStorage.getItem(KEYS.theme);
-  applyTheme(saved ? saved !== 'light' : true);
-}
+function initTheme(){ const saved=localStorage.getItem(KEYS.theme); applyTheme(saved?saved!=='light':true); }
 function applyTheme(isDark){
-  const html = document.documentElement;
-  html.classList.toggle('dark', isDark);
-  html.classList.toggle('light', !isDark);
-  document.querySelectorAll('.theme-icon').forEach(i => i.className = 'fa-solid ' + (isDark?'fa-sun':'fa-moon') + ' theme-icon');
-  const meta = document.querySelector('meta[name="theme-color"]');
-  if(meta) meta.setAttribute('content', isDark ? '#050505' : '#F4F4F7');
-  const el = $('themeState'); if(el) el.textContent = isDark ? 'مُفعّل (داكن)' : 'مُعطّل (فاتح)';
+  const html=document.documentElement;
+  html.classList.toggle('dark', isDark); html.classList.toggle('light', !isDark);
+  document.querySelectorAll('.theme-icon').forEach(i => i.className='fa-solid '+(isDark?'fa-sun':'fa-moon')+' theme-icon');
+  const meta=document.querySelector('meta[name="theme-color"]'); if(meta) meta.setAttribute('content', isDark?'#050505':'#F4F4F7');
+  const el=$('themeState'); if(el) el.textContent = isDark?'مُفعّل (داكن)':'مُعطّل (فاتح)';
 }
 function toggleTheme(){
-  const isDark = document.documentElement.classList.contains('dark');
+  const isDark=document.documentElement.classList.contains('dark');
   applyTheme(!isDark);
   try{ localStorage.setItem(KEYS.theme, !isDark?'dark':'light'); }catch(e){}
 }
 
-/* ═════════ Body Lock ═════════ */
 let scrollY = 0;
-function lockBody(){ scrollY = window.scrollY || 0; document.body.classList.add('locked'); document.body.style.top = `-${scrollY}px`; }
+function lockBody(){ scrollY=window.scrollY||0; document.body.classList.add('locked'); document.body.style.top=`-${scrollY}px`; }
 function unlockBody(){ document.body.classList.remove('locked'); document.body.style.top=''; window.scrollTo(0, scrollY); }
 
-/* ═════════ Navigation ═════════ */
 function switchView(v){
   state.view = v;
   document.querySelectorAll('.view').forEach(x => x.classList.toggle('active', x.id === 'view-'+v));
@@ -911,7 +790,6 @@ function switchView(v){
   if(v === 'reports') renderReports();
 }
 
-/* ═════════ Stats ═════════ */
 function getStats(){
   const b = state.bookings;
   const c = st => b.filter(x => x.status === st).length;
@@ -919,13 +797,8 @@ function getStats(){
   const valid = b.filter(x => x.status !== ST_CANCELLED);
   const paidCount = c(ST_PAID) + c(ST_COMPLETED);
   return {
-    total: b.length,
-    pending: c(ST_PENDING),
-    awaiting: c(ST_AWAITING),
-    paid: c(ST_PAID),
-    approved: c(ST_APPROVED),
-    completed: c(ST_COMPLETED),
-    cancelled: c(ST_CANCELLED),
+    total: b.length, pending: c(ST_PENDING), awaiting: c(ST_AWAITING), paid: c(ST_PAID),
+    approved: c(ST_APPROVED), completed: c(ST_COMPLETED), cancelled: c(ST_CANCELLED),
     revenue: sumBy(valid),
     paidRevenue: sumBy(b.filter(x => x.status === ST_PAID || x.status === ST_COMPLETED)),
     customers: state.customers.length,
@@ -935,7 +808,6 @@ function getStats(){
   };
 }
 
-/* ═════════ Dashboard ═════════ */
 function renderDashboard(){
   const s = getStats();
   $('kpiGrid').innerHTML = `
@@ -952,7 +824,6 @@ function renderDashboard(){
       <div class="k-val">${s.customers}</div><div class="k-lbl">العملاء</div>
       <div class="k-sub">${s.activeDiscounts} خصم نشط</div></div>
   `;
-
   const rows = [
     { label:'قيد المراجعة', cls:'pending', val:s.pending },
     { label:'بانتظار الدفع', cls:'awaiting', val:s.awaiting },
@@ -965,7 +836,6 @@ function renderDashboard(){
     return `<div class="dist-row"><div class="dist-top"><span>${r.label}</span><b>${r.val} · ${pct}%</b></div>
       <div class="dist-bar"><div class="dist-fill ${r.cls}" style="width:${pct}%"></div></div></div>`;
   }).join('');
-
   const recent = state.bookings.slice(0, 5);
   const box = $('recentBox');
   if(!recent.length){
@@ -976,7 +846,7 @@ function renderDashboard(){
     box.innerHTML = recent.map(b => {
       const m = metaOf(b.status);
       return `<div class="item-card" style="cursor:pointer" data-id="${esc(b.id)}" onclick="openDetails(this.dataset.id)">
-        ${b.carImage ? `<img class="bk-thumb" style="width:44px;height:44px;border-radius:11px" src="${esc(b.carImage)}" alt="">` : ''}
+        ${b.carImage?`<img class="bk-thumb" style="width:44px;height:44px;border-radius:11px" src="${esc(b.carImage)}" alt="">`:''}
         <div class="item-body"><b>${esc(b.carName||'—')}</b><small style="color:var(--orange);font-weight:800">${esc(b.id||'—')}</small></div>
         <span class="status-pill ${m.cls}"><i class="fa-solid ${m.icon}${m.spin?' spin':''}"></i>${esc(b.status||ST_PENDING)}</span>
       </div>`;
@@ -984,14 +854,12 @@ function renderDashboard(){
   }
 }
 
-/* ═════════ Bookings filter/render ═════════ */
 function getFilteredBookings(){
   const q = state.search.trim().toLowerCase();
   return state.bookings.filter(b => {
     if(state.statusFilter !== 'all' && b.status !== state.statusFilter) return false;
     if(!q) return true;
-    return [b.id,b.carName,b.customerName,b.customerPhone,b.delivery,b.pickupDate]
-      .filter(Boolean).join(' ').toLowerCase().includes(q);
+    return [b.id,b.carName,b.customerName,b.customerPhone,b.delivery,b.pickupDate].filter(Boolean).join(' ').toLowerCase().includes(q);
   });
 }
 function onSearch(v){ state.search = v; renderBookings(); }
@@ -1017,7 +885,6 @@ function renderStatusFilters(){
   `).join('');
 }
 
-/* ═════════ Booking card ═════════ */
 function bookingCardHTML(b){
   const m = metaOf(b.status);
   const isCancelled = b.status === ST_CANCELLED;
@@ -1026,33 +893,32 @@ function bookingCardHTML(b){
   const canMarkPaid = b.status === ST_AWAITING;
   const canComplete = b.status === ST_PAID || b.status === ST_APPROVED;
   const canCancel = [ST_PENDING, ST_AWAITING, ST_PAID, ST_APPROVED].includes(b.status);
-
   return `
   <article class="bk-card ${isCancelled?'is-cancelled':''}">
     <div class="bk-head">
       <div><div class="bk-id"><span class="dot"></span>${esc(b.id||'—')}</div>
-        <div class="bk-time">${esc(b.createdAt||'—')}</div></div>
+        <div class="bk-time">${esc(b.createdAt||'—')}${b.adminCreated?' · <span style="color:var(--orange);font-weight:800">من الإدارة</span>':''}</div></div>
       <span class="status-pill ${m.cls}"><i class="fa-solid ${m.icon}${m.spin?' spin':''}"></i>${esc(b.status||ST_PENDING)}</span>
     </div>
     <div class="bk-body">
-      ${b.carImage ? `<img class="bk-thumb" src="${esc(b.carImage)}" alt="" loading="lazy">` : ''}
+      ${b.carImage?`<img class="bk-thumb" src="${esc(b.carImage)}" alt="" loading="lazy">`:''}
       <div class="bk-info">
         <h4 class="bk-name">${esc(b.carName||'—')}</h4>
         <div class="bk-meta">
           <div><i class="fa-solid fa-truck-fast"></i><span>${esc(b.delivery||'استلام من الفرع')}</span></div>
           <div><i class="fa-regular fa-calendar"></i><span>${esc(b.pickupDate||'—')} · ${esc(b.days||1)} أيام</span></div>
-          ${b.customerName ? `<div><i class="fa-solid fa-user"></i><span>${esc(b.customerName)}</span></div>` : ''}
+          ${b.customerName?`<div><i class="fa-solid fa-user"></i><span>${esc(b.customerName)}</span></div>`:''}
         </div>
       </div>
       <div class="bk-amount"><b>${fmt(b.total)}</b><small>ريال</small></div>
     </div>
     <div class="bk-actions">
       <button class="bk-btn ghost" data-id="${esc(b.id)}" onclick="openDetails(this.dataset.id)"><i class="fa-solid fa-eye"></i> تفاصيل</button>
-      ${canApprove ? `<button class="bk-btn approve" data-id="${esc(b.id)}" onclick="approveBooking(this.dataset.id)"><i class="fa-solid fa-paper-plane"></i> اعتماد وإرسال</button>` : ''}
-      ${canResend ? `<button class="bk-btn approve" data-id="${esc(b.id)}" onclick="openPayLink(this.dataset.id)"><i class="fa-solid fa-link"></i> رابط الدفع</button>` : ''}
-      ${canMarkPaid ? `<button class="bk-btn cash" data-id="${esc(b.id)}" onclick="askMarkPaid(this.dataset.id)"><i class="fa-solid fa-money-bill-wave"></i> دفع يدوي</button>` : ''}
-      ${canComplete ? `<button class="bk-btn approve" data-id="${esc(b.id)}" onclick="completeBooking(this.dataset.id)"><i class="fa-solid fa-flag-checkered"></i> إكمال</button>` : ''}
-      ${canCancel ? `<button class="bk-btn danger" data-id="${esc(b.id)}" onclick="askCancel(this.dataset.id)"><i class="fa-solid fa-ban"></i> إلغاء</button>` : ''}
+      ${canApprove?`<button class="bk-btn approve" data-id="${esc(b.id)}" onclick="approveBooking(this.dataset.id)"><i class="fa-solid fa-paper-plane"></i> اعتماد</button>`:''}
+      ${canResend?`<button class="bk-btn approve" data-id="${esc(b.id)}" onclick="openPayLink(this.dataset.id)"><i class="fa-solid fa-link"></i> رابط الدفع</button>`:''}
+      ${canMarkPaid?`<button class="bk-btn cash" data-id="${esc(b.id)}" onclick="askMarkPaid(this.dataset.id)"><i class="fa-solid fa-money-bill-wave"></i> دفع يدوي</button>`:''}
+      ${canComplete?`<button class="bk-btn approve" data-id="${esc(b.id)}" onclick="completeBooking(this.dataset.id)"><i class="fa-solid fa-flag-checkered"></i> إكمال</button>`:''}
+      ${canCancel?`<button class="bk-btn danger" data-id="${esc(b.id)}" onclick="askCancel(this.dataset.id)"><i class="fa-solid fa-ban"></i> إلغاء</button>`:''}
       <button class="bk-btn danger" data-id="${esc(b.id)}" onclick="askDelete(this.dataset.id)"><i class="fa-solid fa-trash-can"></i> حذف</button>
     </div>
   </article>`;
@@ -1065,18 +931,31 @@ function renderBookings(){
     wrap.innerHTML = `<div class="empty">
       <div class="empty-ico"><i class="fa-regular fa-calendar"></i></div>
       <h3>${state.bookings.length?'لا نتائج مطابقة':'لا توجد حجوزات بعد'}</h3>
-      <p>${state.bookings.length?'جرّب تغيير الفلتر أو كلمة البحث':'ستظهر الحجوزات هنا فور وصولها من الموقع'}</p>
+      <p>${state.bookings.length?'جرّب تغيير الفلتر':'أنشئ أول حجز من زر "إضافة حجز"'}</p>
+      ${!state.bookings.length?`<button class="btn primary" style="margin-top:14px" onclick="openForm('booking')"><i class="fa-solid fa-plus"></i> إضافة حجز</button>`:''}
     </div>`;
     return;
   }
   wrap.innerHTML = list.map(bookingCardHTML).join('');
 }
 
-/* ═════════ Booking actions ═════════ */
 function findBooking(id){ return state.bookings.find(b => String(b.id) === String(id)); }
-function findItem(type, id){ return state[COLLECTION[type]].find(x => String(x.id) === String(id)); }
-function saveItem(type, item){
+function findItem(type, id){
+  if(type === 'booking') return findBooking(id);
   const key = COLLECTION[type];
+  if(!key) return null;
+  return state[key].find(x => String(x.id) === String(id));
+}
+function saveItem(type, item){
+  if(type === 'booking'){
+    const idx = state.bookings.findIndex(x => String(x.id) === String(item.id));
+    if(idx >= 0) state.bookings[idx] = item;
+    else state.bookings.unshift(item);
+    persistBookings();
+    return;
+  }
+  const key = COLLECTION[type];
+  if(!key) return;
   const arr = state[key];
   const idx = arr.findIndex(x => String(x.id) === String(item.id));
   if(idx >= 0) arr[idx] = item;
@@ -1085,6 +964,7 @@ function saveItem(type, item){
 }
 function deleteItem(type, id){
   const key = COLLECTION[type];
+  if(!key) return;
   state[key] = state[key].filter(x => String(x.id) !== String(id));
   saveCollection(KEYS[key], state[key]);
 }
@@ -1108,29 +988,20 @@ function askMarkPaid(id){
   const b = findBooking(id);
   if(!b) return;
   openConfirm({
-    title:'تسجيل دفع يدوي', text:'سيتم تحويل الحجز إلى "مدفوع" وتسجيل العملية',
-    icon:'fa-money-bill-wave', variant:'primary',
-    okLabel:'تأكيد الدفع', okIcon:'fa-check',
+    title:'تسجيل دفع يدوي', text:'سيتم تحويل الحجز إلى "مدفوع"',
+    icon:'fa-money-bill-wave', variant:'primary', okLabel:'تأكيد الدفع', okIcon:'fa-check',
     details:`<div class="row"><span>رقم الحجز</span><b>${esc(b.id)}</b></div>
              <div class="row"><span>السيارة</span><b>${esc(b.carName||'—')}</b></div>
              <div class="row"><span>المبلغ</span><b>${fmt(b.total)} ر.س</b></div>`,
     action:() => {
       const ref = 'CASH-' + Date.now().toString(36).toUpperCase().slice(-6);
-      b.status = ST_PAID;
-      b.paymentStatus = 'paid';
-      b.paidAt = new Date().toISOString();
-      b.paymentMethod = 'cash';
-      b.paymentRef = ref;
+      b.status = ST_PAID; b.paidAt = new Date().toISOString();
+      b.paymentMethod = 'cash'; b.paymentRef = ref;
       persistBookings();
-      try{
-        state.payments.push({
-          id:'pmt_' + Date.now(), bookingId:b.id, amount:Number(b.total)||0,
-          method:'cash', ref, paidAt:b.paidAt, manual:true
-        });
+      try{ state.payments.push({ id:'pmt_'+Date.now(), bookingId:b.id, amount:Number(b.total)||0, method:'cash', ref, paidAt:b.paidAt, manual:true });
         saveCollection(KEYS.payments, state.payments);
       }catch(e){}
-      renderAll();
-      showToast('تم تسجيل الدفع يدوياً');
+      renderAll(); showToast('تم تسجيل الدفع يدوياً');
     }
   });
 }
@@ -1138,41 +1009,34 @@ function askCancel(id){
   const b = findBooking(id);
   if(!b) return;
   openConfirm({
-    title:'تأكيد إلغاء الطلب', text:'لا يمكن التراجع بعد التأكيد',
-    icon:'fa-ban', variant:'danger', okLabel:'نعم، ألغِ', okIcon:'fa-ban',
-    details:`<div class="row"><span>رقم الطلب</span><b>${esc(b.id)}</b></div>
-             <div class="row"><span>السيارة</span><b>${esc(b.carName||'—')}</b></div>
-             <div class="row"><span>المبلغ</span><b>${fmt(b.total)} ر.س</b></div>`,
-    action:() => {
-      b.status = ST_CANCELLED; b.cancelledAt = nowTime();
-      if(persistBookings()){ renderAll(); showToast('تم إلغاء الطلب ' + b.id, 'error'); }
-    }
+    title:'تأكيد إلغاء الطلب', text:'لا يمكن التراجع', icon:'fa-ban', variant:'danger',
+    okLabel:'نعم، ألغِ', okIcon:'fa-ban',
+    details:`<div class="row"><span>رقم الطلب</span><b>${esc(b.id)}</b></div>`,
+    action:() => { b.status = ST_CANCELLED; b.cancelledAt = nowTime();
+      if(persistBookings()){ renderAll(); showToast('تم الإلغاء','error'); } }
   });
 }
 function askDelete(id){
   const b = findBooking(id);
   if(!b) return;
   openConfirm({
-    title:'حذف الحجز نهائياً', text:'سيُحذف السجل بالكامل',
-    icon:'fa-trash-can', variant:'danger', okLabel:'حذف نهائي', okIcon:'fa-trash-can',
+    title:'حذف الحجز نهائياً', text:'سيُحذف السجل بالكامل', icon:'fa-trash-can', variant:'danger',
+    okLabel:'حذف نهائي', okIcon:'fa-trash-can',
     details:`<div class="row"><span>رقم الطلب</span><b>${esc(b.id)}</b></div>`,
-    action:() => {
-      state.bookings = state.bookings.filter(x => String(x.id) !== String(id));
-      if(persistBookings()){ renderAll(); showToast('تم الحذف', 'error'); }
-    }
+    action:() => { state.bookings = state.bookings.filter(x => String(x.id) !== String(id));
+      if(persistBookings()){ renderAll(); showToast('تم الحذف','error'); } }
   });
 }
 function askClearAll(){
   if(!state.bookings.length) return showToast('لا توجد حجوزات', 'error');
   openConfirm({
-    title:'حذف جميع الحجوزات', text:'سيتم حذف كل السجلات المحفوظة',
-    icon:'fa-triangle-exclamation', variant:'danger', okLabel:'حذف الكل', okIcon:'fa-trash-can',
+    title:'حذف جميع الحجوزات', text:'سيتم حذف كل السجلات', icon:'fa-triangle-exclamation', variant:'danger',
+    okLabel:'حذف الكل', okIcon:'fa-trash-can',
     details:`<div class="row"><span>عدد الحجوزات</span><b>${state.bookings.length}</b></div>`,
-    action:() => { state.bookings = []; if(persistBookings()){ renderAll(); showToast('تم حذف الكل', 'error'); } }
+    action:() => { state.bookings = []; if(persistBookings()){ renderAll(); showToast('تم حذف الكل','error'); } }
   });
 }
 
-/* ═════════ Details sheet ═════════ */
 function dRow(icon, label, value, opts){
   opts = opts || {};
   return `<div class="d-row"><span class="k"><i class="fa-solid ${icon}"></i>${esc(label)}</span>
@@ -1183,7 +1047,6 @@ function openDetails(id){
   if(!b) return showToast('الحجز غير موجود', 'error');
   const m = metaOf(b.status);
   const disc = b.discountAmount ? `<div class="d-row"><span class="k"><i class="fa-solid fa-percent"></i>خصم (${esc(b.discountCode||'')})</span><span class="v money">- ${fmt(b.discountAmount)} ر.س</span></div>` : '';
-
   $('detailBody').innerHTML = `
     <div class="sheet-hero">
       ${b.carImage?`<img src="${esc(b.carImage)}" alt="">`:''}
@@ -1203,20 +1066,20 @@ function openDetails(id){
       ${dRow('fa-calendar','تاريخ الاستلام', b.pickupDate||'—', {ltr:true})}
       ${dRow('fa-clock','الأيام', (b.days||1)+' أيام')}
       ${dRow('fa-truck-fast','التسليم', b.delivery||'استلام من الفرع')}
-      ${b.originalTotal ? dRow('fa-tag','الإجمالي قبل الخصم', fmt(b.originalTotal)+' ر.س') : ''}
+      ${b.originalTotal?dRow('fa-tag','قبل الخصم', fmt(b.originalTotal)+' ر.س'):''}
       ${disc}
       ${dRow('fa-sack-dollar','الإجمالي', fmt(b.total)+' ريال', {money:true})}
       ${dRow('fa-circle-info','الإنشاء', b.createdAt||'—')}
-      ${b.customerName ? dRow('fa-user','العميل', b.customerName) : ''}
-      ${b.customerPhone ? dRow('fa-phone','الجوال', b.customerPhone, {ltr:true}) : ''}
-      ${b.customerIdNum ? dRow('fa-id-card','الهوية', b.customerIdNum, {ltr:true}) : ''}
-      ${b.paidAt ? dRow('fa-credit-card','تاريخ الدفع', new Date(b.paidAt).toLocaleString('ar-SA')) : ''}
-      ${b.paymentRef ? dRow('fa-receipt','مرجع الدفع', b.paymentRef, {ltr:true}) : ''}
-      ${b.cancelledAt ? dRow('fa-ban','وقت الإلغاء', b.cancelledAt) : ''}
-      ${b.approvedAt ? dRow('fa-check','وقت الاعتماد', b.approvedAt) : ''}
+      ${b.customerName?dRow('fa-user','العميل', b.customerName):''}
+      ${b.customerPhone?dRow('fa-phone','الجوال', b.customerPhone, {ltr:true}):''}
+      ${b.customerIdNum?dRow('fa-id-card','الهوية', b.customerIdNum, {ltr:true}):''}
+      ${b.paidAt?dRow('fa-credit-card','تاريخ الدفع', new Date(b.paidAt).toLocaleString('ar-SA')):''}
+      ${b.paymentRef?dRow('fa-receipt','مرجع الدفع', b.paymentRef, {ltr:true}):''}
+      ${b.notes?dRow('fa-sticky-note','ملاحظات', b.notes):''}
     </div>
     <div style="display:flex;gap:8px;flex-wrap:wrap">
-      ${b.status===ST_PENDING?`<button class="btn ok" style="flex:1" data-id="${esc(b.id)}" onclick="approveBooking(this.dataset.id);closeDetails()"><i class="fa-solid fa-paper-plane"></i> اعتماد وإرسال</button>`:''}
+      <button class="btn soft" style="flex:1" data-id="${esc(b.id)}" onclick="closeDetails();openForm('booking', this.dataset.id)"><i class="fa-solid fa-pen"></i> تعديل</button>
+      ${b.status===ST_PENDING?`<button class="btn ok" style="flex:1" data-id="${esc(b.id)}" onclick="approveBooking(this.dataset.id);closeDetails()"><i class="fa-solid fa-paper-plane"></i> اعتماد</button>`:''}
       ${b.status===ST_AWAITING?`<button class="btn ok" style="flex:1" data-id="${esc(b.id)}" onclick="openPayLink(this.dataset.id)"><i class="fa-solid fa-link"></i> رابط الدفع</button>`:''}
       ${b.status===ST_AWAITING?`<button class="btn soft" style="flex:1" data-id="${esc(b.id)}" onclick="closeDetails();askMarkPaid(this.dataset.id)"><i class="fa-solid fa-money-bill-wave"></i> دفع يدوي</button>`:''}
       ${(b.status===ST_PAID||b.status===ST_APPROVED)?`<button class="btn primary" style="flex:1" data-id="${esc(b.id)}" onclick="completeBooking(this.dataset.id);closeDetails()"><i class="fa-solid fa-flag-checkered"></i> إكمال</button>`:''}
@@ -1226,7 +1089,6 @@ function openDetails(id){
   $('detailSheet').classList.add('active'); lockBody();
 }
 
-/* ═════════ Pay link ═════════ */
 function getPhoneDigits(phone){
   if(!phone) return '';
   const d = String(phone).replace(/\D/g,'');
@@ -1238,12 +1100,10 @@ function openPayLink(id){
   const b = findBooking(id);
   if(!b) return showToast('الحجز غير موجود','error');
   if(b.status !== ST_AWAITING){
-    b.status = ST_AWAITING;
-    b.approvedAt = b.approvedAt || nowTime();
+    b.status = ST_AWAITING; b.approvedAt = b.approvedAt || nowTime();
     b.paymentLink = 'pay.html?id='+encodeURIComponent(b.id);
     persistBookings(); renderAll();
   }
-
   const fullLink = new URL('pay.html?id='+encodeURIComponent(b.id), location.href).href;
   const phone = getPhoneDigits(b.customerPhone || state.profile.phone || '');
   const amount = fmt(b.total);
@@ -1256,25 +1116,21 @@ function openPayLink(id){
 ${fullLink}
 
 شكراً لثقتك بشفل SHUFF.`;
-
   const waLink = phone ? `https://wa.me/${phone}?text=${encodeURIComponent(message)}` : '#';
   const smsLink = phone ? `sms:${phone}?&body=${encodeURIComponent(message)}` : '#';
-
   $('payLinkBody').innerHTML = `
     <div class="pay-success-icon"><i class="fa-solid fa-paper-plane"></i></div>
     <h2 class="pay-title">تم اعتماد الحجز</h2>
-    <p class="pay-sub">أرسل رابط الدفع للعميل لإتمام العملية</p>
+    <p class="pay-sub">أرسل رابط الدفع للعميل</p>
     <div class="d-rows">
       ${dRow('fa-hashtag','رقم الحجز', b.id, {ltr:true})}
       ${dRow('fa-car','السيارة', b.carName)}
       ${dRow('fa-sack-dollar','المبلغ', fmt(b.total)+' ريال', {money:true})}
-      ${b.customerName ? dRow('fa-user','العميل', b.customerName) : ''}
-      ${b.customerPhone ? dRow('fa-phone','الجوال', b.customerPhone, {ltr:true}) : ''}
+      ${b.customerName?dRow('fa-user','العميل', b.customerName):''}
+      ${b.customerPhone?dRow('fa-phone','الجوال', b.customerPhone, {ltr:true}):''}
     </div>
-    <div class="link-display">
-      <span>${esc(fullLink)}</span>
-      <button onclick="copyText('${esc(fullLink)}','تم نسخ الرابط')"><i class="fa-solid fa-copy"></i></button>
-    </div>
+    <div class="link-display"><span>${esc(fullLink)}</span>
+      <button onclick="copyText('${esc(fullLink)}','تم نسخ الرابط')"><i class="fa-solid fa-copy"></i></button></div>
     <div class="pay-actions">
       <a class="btn ok" href="${esc(waLink)}" target="_blank" rel="noopener"><i class="fa-brands fa-whatsapp"></i> واتساب</a>
       <a class="btn soft" href="${esc(smsLink)}"><i class="fa-solid fa-comment-sms"></i> SMS</a>
@@ -1286,10 +1142,7 @@ ${fullLink}
   `;
   $('payLinkSheet').classList.add('active'); lockBody();
 }
-function closePayLink(){
-  $('payLinkSheet').classList.remove('active');
-  unlockBody();
-}
+function closePayLink(){ $('payLinkSheet').classList.remove('active'); unlockBody(); }
 function copyText(text, okMsg){
   (navigator.clipboard?.writeText(text) || Promise.reject()).then(
     () => showToast(okMsg || 'تم النسخ'),
@@ -1303,71 +1156,53 @@ function copyText(text, okMsg){
   );
 }
 
-/* ═════════ Payments ═════════ */
 function renderPayments(){
   const pays = [...state.payments].sort((a,b) => new Date(b.paidAt||0) - new Date(a.paidAt||0));
   const total = pays.reduce((s,p) => s + (Number(p.amount)||0), 0);
   const avg = pays.length ? Math.round(total / pays.length) : 0;
-
   $('paymentStats').innerHTML = `
     <div class="kpi green"><div class="blob"></div><i class="fa-solid fa-sack-dollar k-ico"></i>
-      <div class="k-val">${fmt(total)}</div><div class="k-lbl">إجمالي المدفوعات</div>
-      <div class="k-sub">ريال سعودي</div></div>
+      <div class="k-val">${fmt(total)}</div><div class="k-lbl">إجمالي المدفوعات</div><div class="k-sub">ريال</div></div>
     <div class="kpi orange"><div class="blob"></div><i class="fa-solid fa-receipt k-ico"></i>
-      <div class="k-val">${pays.length}</div><div class="k-lbl">عدد العمليات</div>
-      <div class="k-sub">عملية دفع مسجلة</div></div>
+      <div class="k-val">${pays.length}</div><div class="k-lbl">عدد العمليات</div><div class="k-sub">عملية مسجلة</div></div>
     <div class="kpi blue"><div class="blob"></div><i class="fa-solid fa-chart-line k-ico"></i>
-      <div class="k-val">${fmt(avg)}</div><div class="k-lbl">متوسط الدفعة</div>
-      <div class="k-sub">ريال</div></div>
+      <div class="k-val">${fmt(avg)}</div><div class="k-lbl">متوسط الدفعة</div><div class="k-sub">ريال</div></div>
   `;
-
   const box = $('paymentsList');
   $('paymentsCount').textContent = pays.length ? `${pays.length} عملية` : 'لا توجد عمليات';
   if(!pays.length){
     box.innerHTML = `<div class="empty" style="border:none;background:transparent;padding:26px 14px">
       <div class="empty-ico" style="width:50px;height:50px;font-size:17px"><i class="fa-solid fa-credit-card"></i></div>
-      <h3>لا توجد مدفوعات بعد</h3><p>ستظهر هنا كل عملية دفع من صفحة pay.html</p>
-    </div>`;
+      <h3>لا توجد مدفوعات</h3><p>ستظهر هنا عمليات الدفع</p></div>`;
     return;
   }
-  const methodLabel = m => ({card:'بطاقة', applepay:'Apple Pay', stcpay:'STC Pay', bank:'تحويل', cash:'نقدي'}[m] || m || '—');
+  const methodLabel = m => ({card:'بطاقة', applepay:'Apple Pay', stcpay:'STC Pay', bank:'تحويل', cash:'نقدي', admin:'إداري'}[m] || m || '—');
   box.innerHTML = pays.map(p => {
     const when = p.paidAt ? new Date(p.paidAt).toLocaleString('ar-SA',{dateStyle:'short',timeStyle:'short'}) : '—';
     return `<div class="pay-row">
       <div class="pay-ico"><i class="fa-solid fa-circle-check"></i></div>
-      <div class="pay-info">
-        <b>${esc(p.ref || p.id)}</b>
-        <small>${esc(p.bookingId || '—')} · ${methodLabel(p.method)} · ${esc(when)}</small>
-      </div>
-      <div class="pay-amount">
-        <b>${fmt(p.amount)}</b>
-        <small>ريال</small>
-      </div>
+      <div class="pay-info"><b>${esc(p.ref || p.id)}</b>
+        <small>${esc(p.bookingId || '—')} · ${methodLabel(p.method)} · ${esc(when)}</small></div>
+      <div class="pay-amount"><b>${fmt(p.amount)}</b><small>ريال</small></div>
     </div>`;
   }).join('');
 }
 
-/* ═════════ Reports ═════════ */
 function renderReports(){
   const s = getStats();
   $('reportStats').innerHTML = `
     <div class="kpi green"><div class="blob"></div><i class="fa-solid fa-sack-dollar k-ico"></i>
-      <div class="k-val">${fmt(s.paidRevenue)}</div><div class="k-lbl">إيراد محصّل</div>
-      <div class="k-sub">من الحجوزات المدفوعة</div></div>
+      <div class="k-val">${fmt(s.paidRevenue)}</div><div class="k-lbl">إيراد محصّل</div></div>
     <div class="kpi orange"><div class="blob"></div><i class="fa-solid fa-chart-simple k-ico"></i>
       <div class="k-val">${s.conversionRate}%</div><div class="k-lbl">معدل التحويل</div>
-      <div class="k-sub">${s.paid + s.completed} من ${s.total} حجز</div></div>
+      <div class="k-sub">${s.paid + s.completed} من ${s.total}</div></div>
     <div class="kpi blue"><div class="blob"></div><i class="fa-solid fa-calculator k-ico"></i>
-      <div class="k-val">${fmt(s.total ? Math.round(s.revenue / s.total) : 0)}</div><div class="k-lbl">متوسط الحجز</div>
-      <div class="k-sub">ريال</div></div>
+      <div class="k-val">${fmt(s.total ? Math.round(s.revenue/s.total) : 0)}</div><div class="k-lbl">متوسط الحجز</div></div>
   `;
-
-  /* الإيراد الشهري */
   const monthly = {};
   state.payments.forEach(p => {
     if(!p.paidAt) return;
-    const d = new Date(p.paidAt);
-    if(isNaN(d)) return;
+    const d = new Date(p.paidAt); if(isNaN(d)) return;
     const key = d.getFullYear() + '-' + pad2(d.getMonth()+1);
     monthly[key] = (monthly[key]||0) + (Number(p.amount)||0);
   });
@@ -1383,10 +1218,7 @@ function renderReports(){
     <div class="mini-bar">
       <div class="bar-top"><span>${esc(m.label)}</span><b>${fmt(m.value)}</b></div>
       <div class="bar-track"><div class="bar-fill" style="width:${Math.round(m.value/maxM*100)}%"></div></div>
-    </div>
-  `).join('');
-
-  /* أعلى 5 مركبات */
+    </div>`).join('');
   const byCar = {};
   state.bookings.forEach(b => {
     if(b.status === ST_CANCELLED) return;
@@ -1399,23 +1231,19 @@ function renderReports(){
     <div class="mini-bar">
       <div class="bar-top"><span style="overflow:hidden;text-overflow:ellipsis;white-space:nowrap;max-width:60%">${esc(name)}</span><b>${fmt(val)}</b></div>
       <div class="bar-track"><div class="bar-fill" style="width:${Math.round(val/maxC*100)}%"></div></div>
-    </div>
-  `).join('') : `<div style="text-align:center;padding:20px;color:var(--fg-3);font-size:11.5px;font-weight:600">لا توجد بيانات</div>`;
-
-  /* معدل التحويل */
+    </div>`).join('') : `<div style="text-align:center;padding:20px;color:var(--fg-3);font-size:11.5px">لا توجد بيانات</div>`;
   $('conversionBox').innerHTML = `
     <div class="dist-row"><div class="dist-top"><span>مدفوع / مكتمل</span><b>${s.paid + s.completed}</b></div>
-      <div class="dist-bar"><div class="dist-fill paid" style="width:${s.total ? Math.round((s.paid+s.completed)/s.total*100) : 0}%"></div></div></div>
+      <div class="dist-bar"><div class="dist-fill paid" style="width:${s.total?Math.round((s.paid+s.completed)/s.total*100):0}%"></div></div></div>
     <div class="dist-row"><div class="dist-top"><span>بانتظار الدفع</span><b>${s.awaiting}</b></div>
-      <div class="dist-bar"><div class="dist-fill awaiting" style="width:${s.total ? Math.round(s.awaiting/s.total*100) : 0}%"></div></div></div>
+      <div class="dist-bar"><div class="dist-fill awaiting" style="width:${s.total?Math.round(s.awaiting/s.total*100):0}%"></div></div></div>
     <div class="dist-row"><div class="dist-top"><span>قيد المراجعة</span><b>${s.pending}</b></div>
-      <div class="dist-bar"><div class="dist-fill pending" style="width:${s.total ? Math.round(s.pending/s.total*100) : 0}%"></div></div></div>
+      <div class="dist-bar"><div class="dist-fill pending" style="width:${s.total?Math.round(s.pending/s.total*100):0}%"></div></div></div>
     <div class="dist-row"><div class="dist-top"><span>ملغي</span><b>${s.cancelled}</b></div>
-      <div class="dist-bar"><div class="dist-fill cancelled" style="width:${s.total ? Math.round(s.cancelled/s.total*100) : 0}%"></div></div></div>
+      <div class="dist-bar"><div class="dist-fill cancelled" style="width:${s.total?Math.round(s.cancelled/s.total*100):0}%"></div></div></div>
   `;
 }
 
-/* ═════════ Fleet render ═════════ */
 function setFleetFilter(v){
   state.fleetFilter = v;
   document.querySelectorAll('#fleetFilters .chip').forEach(c => c.classList.toggle('active', c.dataset.fs === v));
@@ -1423,10 +1251,7 @@ function setFleetFilter(v){
 }
 function renderFleetFilters(){
   const counts = { all: state.cars.length, available:0, rented:0, maintenance:0 };
-  state.cars.forEach(c => {
-    const s = c.status || 'available';
-    if(counts[s] !== undefined) counts[s]++;
-  });
+  state.cars.forEach(c => { const s = c.status||'available'; if(counts[s]!==undefined) counts[s]++; });
   const items = [
     { key:'all', label:'الكل', count:counts.all },
     { key:'available', label:'متاحة', count:counts.available },
@@ -1436,22 +1261,18 @@ function renderFleetFilters(){
   $('fleetFilters').innerHTML = items.map(it => `
     <button class="chip ${state.fleetFilter===it.key?'active':''}" data-fs="${it.key}" onclick="setFleetFilter(this.dataset.fs)">
       ${it.label} <span class="cnt">${it.count}</span>
-    </button>
-  `).join('');
+    </button>`).join('');
 }
 function renderFleet(){
   renderFleetFilters();
   const grid = $('fleetGrid');
-  const filtered = state.cars.filter(c => {
-    if(state.fleetFilter === 'all') return true;
-    return (c.status || 'available') === state.fleetFilter;
-  });
+  const filtered = state.cars.filter(c => state.fleetFilter === 'all' || (c.status||'available') === state.fleetFilter);
   if(!filtered.length){
     grid.innerHTML = `<div class="empty">
       <div class="empty-ico"><i class="fa-solid fa-car-side"></i></div>
-      <h3>${state.cars.length ? 'لا مركبات بهذه الحالة' : 'لا توجد مركبات'}</h3>
-      <p>${state.cars.length ? 'جرّب تغيير الفلتر' : 'أضف أول مركبة للأسطول'}</p>
-      ${!state.cars.length ? `<button class="btn primary" style="margin-top:14px" onclick="openForm('car')"><i class="fa-solid fa-plus"></i> إضافة مركبة</button>` : ''}
+      <h3>${state.cars.length?'لا مركبات بهذه الحالة':'لا توجد مركبات'}</h3>
+      <p>${state.cars.length?'جرّب الفلتر':'أضف أول مركبة'}</p>
+      ${!state.cars.length?`<button class="btn primary" style="margin-top:14px" onclick="openForm('car')"><i class="fa-solid fa-plus"></i> إضافة مركبة</button>`:''}
     </div>`; return;
   }
   grid.innerHTML = filtered.map(car => {
@@ -1465,8 +1286,8 @@ function renderFleet(){
           <img src="${esc(car.image)}" alt="${esc(car.name)}" loading="lazy" decoding="async">
           ${car.badge?`<span class="fl-tag">${esc(car.badge)}</span>`:''}
           <div class="fl-overlay">
-            <button class="fl-action" data-id="${esc(car.id)}" onclick="openForm('car', this.dataset.id)" aria-label="تعديل"><i class="fa-solid fa-pen"></i></button>
-            <button class="fl-action del" data-id="${esc(car.id)}" onclick="askDeleteItem('car', this.dataset.id)" aria-label="حذف"><i class="fa-solid fa-trash-can"></i></button>
+            <button class="fl-action" data-id="${esc(car.id)}" onclick="openForm('car', this.dataset.id)"><i class="fa-solid fa-pen"></i></button>
+            <button class="fl-action del" data-id="${esc(car.id)}" onclick="askDeleteItem('car', this.dataset.id)"><i class="fa-solid fa-trash-can"></i></button>
           </div>
         </div>
         <div class="fl-body">
@@ -1487,15 +1308,13 @@ function renderFleet(){
   }).join('');
 }
 
-/* ═════════ Categories / Companies render ═════════ */
 function renderCategories(){
   const box = $('categoriesList');
   if(!state.categories.length){
     box.innerHTML = `<div class="empty" style="border:none;background:transparent;padding:26px 14px">
       <div class="empty-ico" style="width:50px;height:50px;font-size:17px"><i class="fa-solid fa-tags"></i></div>
       <h3>لا توجد أقسام</h3><p>أضف قسمك الأول</p>
-      <button class="btn primary" style="margin-top:12px" onclick="openForm('category')"><i class="fa-solid fa-plus"></i> إضافة قسم</button>
-    </div>`; return;
+      <button class="btn primary" style="margin-top:12px" onclick="openForm('category')"><i class="fa-solid fa-plus"></i> إضافة قسم</button></div>`; return;
   }
   box.innerHTML = state.categories.map(c => `
     <div class="item-card">
@@ -1513,8 +1332,7 @@ function renderCompanies(){
     box.innerHTML = `<div class="empty" style="border:none;background:transparent;padding:26px 14px">
       <div class="empty-ico" style="width:50px;height:50px;font-size:17px"><i class="fa-solid fa-building"></i></div>
       <h3>لا توجد شركات</h3><p>أضف أول شركة</p>
-      <button class="btn primary" style="margin-top:12px" onclick="openForm('company')"><i class="fa-solid fa-plus"></i> إضافة شركة</button>
-    </div>`; return;
+      <button class="btn primary" style="margin-top:12px" onclick="openForm('company')"><i class="fa-solid fa-plus"></i> إضافة شركة</button></div>`; return;
   }
   box.innerHTML = state.companies.map(c => {
     const count = state.cars.filter(x => x.company === c.name).length;
@@ -1529,26 +1347,22 @@ function renderCompanies(){
   }).join('');
 }
 
-/* ═════════ Customers render ═════════ */
 function renderCustomers(){
   $('customersCount').textContent = `${state.customers.length} عميل مسجل`;
   const box = $('customersList');
   if(!state.customers.length){
     box.innerHTML = `<div class="empty" style="border:none;background:transparent;padding:26px 14px">
       <div class="empty-ico" style="width:50px;height:50px;font-size:17px"><i class="fa-solid fa-users"></i></div>
-      <h3>لا يوجد عملاء مسجلون</h3><p>أضف أول عميل يدوياً</p>
-      <button class="btn primary" style="margin-top:12px" onclick="openForm('customer')"><i class="fa-solid fa-plus"></i> إضافة عميل</button>
-    </div>`;
+      <h3>لا يوجد عملاء مسجلون</h3><p>أضف أول عميل</p>
+      <button class="btn primary" style="margin-top:12px" onclick="openForm('customer')"><i class="fa-solid fa-plus"></i> إضافة عميل</button></div>`;
   } else {
     box.innerHTML = state.customers.map(c => {
       const bookings = state.bookings.filter(b => b.customerPhone === c.phone || b.customerName === c.name);
       const total = bookings.filter(b => b.status !== ST_CANCELLED).reduce((s,b) => s + (Number(b.total)||0),0);
       return `<div class="item-card">
         <div class="cust-av">${esc((c.name||'ع').charAt(0))}</div>
-        <div class="item-body">
-          <b>${esc(c.name)}</b>
-          <small>${esc(c.phone||'—')}${c.city?' · '+esc(c.city):''}${bookings.length?' · '+bookings.length+' حجز ('+fmt(total)+' ر.س)':''}</small>
-        </div>
+        <div class="item-body"><b>${esc(c.name)}</b>
+          <small>${esc(c.phone||'—')}${c.city?' · '+esc(c.city):''}${bookings.length?' · '+bookings.length+' حجز ('+fmt(total)+' ر.س)':''}</small></div>
         <div class="item-actions">
           <button class="icon-btn edit" data-id="${esc(c.id)}" onclick="openForm('customer', this.dataset.id)"><i class="fa-solid fa-pen"></i></button>
           <button class="icon-btn del" data-id="${esc(c.id)}" onclick="askDeleteItem('customer', this.dataset.id)"><i class="fa-solid fa-trash-can"></i></button>
@@ -1556,7 +1370,6 @@ function renderCustomers(){
       </div>`;
     }).join('');
   }
-
   const map = new Map();
   state.bookings.forEach(b => {
     const phone = b.customerPhone || b.phone || '';
@@ -1564,16 +1377,14 @@ function renderCustomers(){
     if(!phone && !name) return;
     const key = phone || name;
     if(!map.has(key)) map.set(key, { name, phone, count:0, total:0 });
-    const c = map.get(key);
-    c.count++;
+    const c = map.get(key); c.count++;
     if(!c.name && name) c.name = name;
     if(b.status !== ST_CANCELLED) c.total += Number(b.total)||0;
   });
   const list = [...map.values()].sort((a,b) => b.total - a.total);
   const bbox = $('customersFromBookings');
   if(!list.length){
-    bbox.innerHTML = `<div style="text-align:center;padding:22px;color:var(--fg-3);font-size:11.5px;font-weight:600">
-      لا توجد بيانات عملاء داخل الحجوزات الحالية</div>`;
+    bbox.innerHTML = `<div style="text-align:center;padding:22px;color:var(--fg-3);font-size:11.5px;font-weight:600">لا توجد بيانات عملاء داخل الحجوزات</div>`;
   } else {
     bbox.innerHTML = list.map(c => `
       <div class="item-card">
@@ -1587,15 +1398,13 @@ function renderCustomers(){
   }
 }
 
-/* ═════════ Discounts render ═════════ */
 function renderDiscounts(){
   const box = $('discountsList');
   if(!state.discounts.length){
     box.innerHTML = `<div class="empty" style="border:none;background:transparent;padding:26px 14px">
       <div class="empty-ico" style="width:50px;height:50px;font-size:17px"><i class="fa-solid fa-percent"></i></div>
-      <h3>لا توجد أكواد خصم</h3><p>أضف كوداً ليظهر في نموذج الحجز</p>
-      <button class="btn primary" style="margin-top:12px" onclick="openForm('discount')"><i class="fa-solid fa-plus"></i> إضافة خصم</button>
-    </div>`; return;
+      <h3>لا توجد أكواد خصم</h3><p>أضف كوداً</p>
+      <button class="btn primary" style="margin-top:12px" onclick="openForm('discount')"><i class="fa-solid fa-plus"></i> إضافة خصم</button></div>`; return;
   }
   box.innerHTML = state.discounts.map(d => {
     const valLabel = d.type === 'percent' ? `${d.value}%` : `${fmt(d.value)} ر.س`;
@@ -1625,7 +1434,6 @@ function toggleDiscount(id){
   showToast(d.active ? 'تم تفعيل الخصم' : 'تم إيقاف الخصم');
 }
 
-/* ═════════ Storage info / Export / Import ═════════ */
 function renderStorageInfo(){
   let bytes = 0;
   try{ bytes = new Blob([localStorage.getItem(KEYS.bookings)||'']).size; }catch(e){}
@@ -1637,8 +1445,7 @@ function exportData(){
   try{
     const payload = {
       app:'SHUFF', exportedAt:new Date().toISOString(),
-      profile: state.profile,
-      bookings: state.bookings, payments: state.payments,
+      profile: state.profile, bookings: state.bookings, payments: state.payments,
       cars: state.cars, categories: state.categories, companies: state.companies,
       customers: state.customers, discounts: state.discounts
     };
@@ -1661,39 +1468,25 @@ function importBackup(e){
       const data = JSON.parse(reader.result);
       if(!data || typeof data !== 'object') throw new Error('bad');
       openConfirm({
-        title:'استيراد النسخة الاحتياطية',
-        text:'سيتم استبدال البيانات الحالية بالبيانات المستوردة',
+        title:'استيراد النسخة', text:'سيتم استبدال البيانات الحالية',
         icon:'fa-file-import', variant:'primary', okLabel:'استيراد', okIcon:'fa-upload',
-        details:`
-          <div class="row"><span>الحجوزات</span><b>${(data.bookings||[]).length}</b></div>
-          <div class="row"><span>المدفوعات</span><b>${(data.payments||[]).length}</b></div>
-          <div class="row"><span>المركبات</span><b>${(data.cars||[]).length}</b></div>
-          <div class="row"><span>العملاء</span><b>${(data.customers||[]).length}</b></div>`,
+        details:`<div class="row"><span>الحجوزات</span><b>${(data.bookings||[]).length}</b></div>
+                 <div class="row"><span>المركبات</span><b>${(data.cars||[]).length}</b></div>`,
         action:() => {
-          const assign = (key, arr) => {
-            if(Array.isArray(arr)) try{ localStorage.setItem(key, JSON.stringify(arr)); }catch(e){}
-          };
-          assign(KEYS.bookings, data.bookings);
-          assign(KEYS.payments, data.payments);
-          assign(KEYS.cars, data.cars);
-          assign(KEYS.categories, data.categories);
-          assign(KEYS.companies, data.companies);
-          assign(KEYS.customers, data.customers);
+          const assign = (key, arr) => { if(Array.isArray(arr)) try{ localStorage.setItem(key, JSON.stringify(arr)); }catch(e){} };
+          assign(KEYS.bookings, data.bookings); assign(KEYS.payments, data.payments);
+          assign(KEYS.cars, data.cars); assign(KEYS.categories, data.categories);
+          assign(KEYS.companies, data.companies); assign(KEYS.customers, data.customers);
           assign(KEYS.discounts, data.discounts);
           if(data.profile) try{ localStorage.setItem(KEYS.profile, JSON.stringify(data.profile)); }catch(e){}
-          loadAll(); renderAll();
-          showToast('تم استيراد البيانات بنجاح');
+          loadAll(); renderAll(); showToast('تم استيراد البيانات');
         }
       });
     }catch(err){ showToast('ملف غير صالح','error'); }
   };
   reader.readAsText(file);
 }
-
-function csvCell(v){
-  const s = String(v == null ? '' : v).replace(/"/g, '""');
-  return '"' + s + '"';
-}
+function csvCell(v){ return '"' + String(v==null?'':v).replace(/"/g,'""') + '"'; }
 function downloadCSV(rows, filename){
   const csv = '\uFEFF' + rows.map(r => r.map(csvCell).join(',')).join('\r\n');
   const blob = new Blob([csv], {type:'text/csv;charset=utf-8;'});
@@ -1724,7 +1517,9 @@ function exportPaymentsCSV(){
   showToast('تم تصدير المدفوعات');
 }
 
-/* ═════════ Form ═════════ */
+/* ═══════════════════════════════════════════════════════════════
+   ✅ FORMS — إضافة/تعديل (يشمل الحجوزات)
+   ═══════════════════════════════════════════════════════════════ */
 function openForm(type, id){
   state.form = { type, id: id ? String(id) : null };
   const isEdit = !!id;
@@ -1733,30 +1528,141 @@ function openForm(type, id){
   $('formBody').innerHTML = formHTML(type, data, isEdit);
   $('formSheet').classList.add('active');
   lockBody();
-  setTimeout(() => { const inp = $('formBody').querySelector('input,select,textarea'); if(inp) inp.focus(); }, 100);
+  setTimeout(() => {
+    const inp = $('formBody').querySelector('input,select,textarea');
+    if(inp && !isEdit) inp.focus();
+    if(type === 'booking') updateBookingCalc();
+  }, 100);
   const inner = $('formInner'); if(inner) inner.scrollTop = 0;
 }
 function closeForm(){
   $('formSheet').classList.remove('active');
   state.form = { type:null, id:null };
+  state.bookingCalc = null;
   unlockBody();
+}
+
+/* حساب الإجمالي للحجز مباشرة في النموذج */
+function updateBookingCalc(){
+  const carSel = $('bCarId');
+  if(!carSel) return;
+  const car = state.cars.find(c => String(c.id) === String(carSel.value));
+  const days = parseInt($('bDays')?.value) || 1;
+  const delivery = $('bDelivery')?.value || 'استلام من الفرع';
+  const deliveryFee = delivery === 'التوصيل للعميل' ? 50 : 0;
+  const code = ($('bDiscountCode')?.value || '').trim().toUpperCase();
+  const info = $('bDiscountInfo');
+
+  const base = car ? (car.price + deliveryFee) * days : 0;
+  let total = base;
+  let discountAmount = 0;
+  let appliedCode = '';
+
+  if(info) info.textContent = '';
+
+  if(code && car){
+    const now = new Date();
+    const d = state.discounts.find(x => {
+      if(!x.active || x.code !== code) return false;
+      if(x.maxUses && (x.uses||0) >= x.maxUses) return false;
+      if(x.expires && new Date(x.expires) < now) return false;
+      return true;
+    });
+    if(!d){
+      if(info){ info.textContent = 'كود غير صالح أو منتهي'; info.style.color = 'var(--red)'; }
+    } else if(d.minAmount && base < d.minAmount){
+      if(info){ info.textContent = 'الحد الأدنى ' + fmt(d.minAmount) + ' ريال'; info.style.color = 'var(--red)'; }
+    } else {
+      discountAmount = d.type === 'percent' ? Math.round(base * d.value / 100) : Math.min(base, d.value);
+      total = Math.max(0, base - discountAmount);
+      appliedCode = code;
+      if(info){
+        info.textContent = '✓ خصم ' + (d.type==='percent' ? d.value + '%' : fmt(d.value) + ' ريال') + ' = ' + fmt(discountAmount) + ' ريال';
+        info.style.color = 'var(--green)';
+      }
+    }
+  }
+
+  const el = $('bTotalDisplay');
+  if(el) el.textContent = fmt(total);
+
+  state.bookingCalc = { base, total, discountAmount, code: appliedCode };
 }
 
 function formHTML(type, data, isEdit){
   const titles = {
-    car: ['إضافة مركبة جديدة','تعديل المركبة'],
-    category: ['إضافة قسم','تعديل القسم'],
-    company: ['إضافة شركة','تعديل الشركة'],
-    customer: ['إضافة عميل','تعديل بيانات العميل'],
-    discount: ['إضافة كود خصم','تعديل كود الخصم']
+    booking:['إضافة حجز جديد','تعديل الحجز'],
+    car:['إضافة مركبة جديدة','تعديل المركبة'],
+    category:['إضافة قسم','تعديل القسم'],
+    company:['إضافة شركة','تعديل الشركة'],
+    customer:['إضافة عميل','تعديل بيانات العميل'],
+    discount:['إضافة كود خصم','تعديل كود الخصم']
   };
   const title = titles[type][isEdit ? 1 : 0];
   let fields = '';
 
-  if(type === 'car'){
+  /* ═════════ نموذج الحجز ═════════ */
+  if(type === 'booking'){
+    const carIdValue = data.carId || (state.cars.find(c => c.name === data.carName)?.id) || '';
+    const statusValue = data.status || ST_PENDING;
+    const statusOptions = [ST_PENDING, ST_AWAITING, ST_PAID, ST_APPROVED, ST_COMPLETED, ST_CANCELLED]
+      .map(s => `<option value="${esc(s)}" ${statusValue===s?'selected':''}>${esc(s)}</option>`).join('');
+
+    fields = `
+      <div class="field"><label>المركبة <span class="req">*</span></label>
+        <select class="inp select" name="carId" id="bCarId" required onchange="updateBookingCalc()">
+          <option value="">— اختر مركبة —</option>
+          ${state.cars.map(c => `<option value="${esc(c.id)}" ${String(carIdValue)===String(c.id)?'selected':''}>${esc(c.name)} — ${fmt(c.price)} ر/يوم</option>`).join('')}
+        </select></div>
+
+      <div class="form-row-2">
+        <div class="field"><label>تاريخ الاستلام <span class="req">*</span></label>
+          <input class="inp" type="date" name="pickupDate" id="bPickup" required value="${esc(data.pickupDate||todayStr())}"></div>
+        <div class="field"><label>الأيام <span class="req">*</span></label>
+          <input class="inp" type="number" name="days" id="bDays" min="1" max="60" required value="${data.days||1}"
+                 oninput="updateBookingCalc()" onchange="updateBookingCalc()" style="padding-left:14px"></div>
+      </div>
+
+      <div class="field"><label>طريقة التسليم</label>
+        <select class="inp select" name="delivery" id="bDelivery" onchange="updateBookingCalc()">
+          <option value="استلام من الفرع" ${data.delivery!=='التوصيل للعميل'?'selected':''}>استلام من الفرع (مشمول)</option>
+          <option value="التوصيل للعميل" ${data.delivery==='التوصيل للعميل'?'selected':''}>التوصيل للعميل (+50 ر/يوم)</option>
+        </select></div>
+
+      <div class="field"><label>كود خصم (اختياري)</label>
+        <input class="inp" name="discountCode" id="bDiscountCode" value="${esc(data.discountCode||'')}"
+               placeholder="SHUFF10" style="text-transform:uppercase;padding-left:14px"
+               oninput="this.value=this.value.toUpperCase();updateBookingCalc()">
+        <div id="bDiscountInfo" class="discount-feedback"></div>
+      </div>
+
+      <div class="field"><label>حالة الحجز</label>
+        <select class="inp select" name="status">${statusOptions}</select></div>
+
+      <div class="field"><label>اسم العميل <span class="req">*</span></label>
+        <input class="inp" name="customerName" required value="${esc(data.customerName||'')}" placeholder="الاسم الثلاثي" style="padding-left:14px"></div>
+
+      <div class="form-row-2">
+        <div class="field"><label>رقم الجوال <span class="req">*</span></label>
+          <input class="inp" type="tel" name="customerPhone" required value="${esc(data.customerPhone||'')}" dir="ltr" style="text-align:right;padding-left:14px" placeholder="05XXXXXXXX"></div>
+        <div class="field"><label>رقم الهوية</label>
+          <input class="inp" name="customerIdNum" value="${esc(data.customerIdNum||'')}" dir="ltr" style="text-align:right;padding-left:14px" placeholder="1XXXXXXXXX"></div>
+      </div>
+
+      <div class="field"><label>ملاحظات (اختياري)</label>
+        <textarea class="inp textarea" name="notes" placeholder="أي تفاصيل إضافية...">${esc(data.notes||'')}</textarea></div>
+
+      <div class="total-box">
+        <div class="lbl"><b>الإجمالي المستحق</b><small>شامل التسليم والخصم</small></div>
+        <div class="amt"><b id="bTotalDisplay">${fmt(data.total||0)}</b><small>ريال</small></div>
+      </div>
+    `;
+  }
+  /* ═════════ نموذج المركبة ═════════ */
+  else if(type === 'car'){
     fields = `
       <div class="field"><label>اسم المركبة <span class="req">*</span></label>
-        <input class="inp" name="name" required value="${esc(data.name||'')}" placeholder="مثال: تويوتا كامري 2024"></div>
+        <input class="inp" name="name" required value="${esc(data.name||'')}" placeholder="تويوتا كامري 2024" style="padding-left:14px"></div>
       <div class="form-row-2">
         <div class="field"><label>القسم <span class="req">*</span></label>
           <select class="inp select" name="category" required>
@@ -1770,11 +1676,11 @@ function formHTML(type, data, isEdit){
       </div>
       <div class="form-row-2">
         <div class="field"><label>السعر / يوم <span class="req">*</span></label>
-          <input class="inp" name="price" type="number" required min="1" value="${data.price||''}" placeholder="0"></div>
+          <input class="inp" name="price" type="number" required min="1" value="${data.price||''}" placeholder="0" style="padding-left:14px"></div>
         <div class="field"><label>الشارة</label>
-          <input class="inp" name="badge" value="${esc(data.badge||'')}" placeholder="VIP، الأكثر طلباً"></div>
+          <input class="inp" name="badge" value="${esc(data.badge||'')}" placeholder="VIP" style="padding-left:14px"></div>
       </div>
-      <div class="field"><label>حالة المركبة <span class="req">*</span></label>
+      <div class="field"><label>حالة المركبة</label>
         <select class="inp select" name="status">
           <option value="available" ${(data.status||'available')==='available'?'selected':''}>متاحة</option>
           <option value="rented" ${data.status==='rented'?'selected':''}>مؤجرة</option>
@@ -1786,70 +1692,74 @@ function formHTML(type, data, isEdit){
             <option value="أوتوماتيك" ${data.transmission==='أوتوماتيك'?'selected':''}>أوتوماتيك</option>
             <option value="عادي" ${data.transmission==='عادي'?'selected':''}>عادي</option>
           </select></div>
-        <div class="field"><label>عدد المقاعد</label>
-          <input class="inp" name="passengers" value="${esc(data.passengers||'5 مقاعد')}"></div>
+        <div class="field"><label>المقاعد</label>
+          <input class="inp" name="passengers" value="${esc(data.passengers||'5 مقاعد')}" style="padding-left:14px"></div>
       </div>
       <div class="field"><label>المحرك</label>
-        <input class="inp" name="engine" value="${esc(data.engine||'')}" placeholder="V8، 4 سلندر"></div>
+        <input class="inp" name="engine" value="${esc(data.engine||'')}" placeholder="V8" style="padding-left:14px"></div>
       <div class="field"><label>رابط الصورة <span class="req">*</span></label>
-        <input class="inp" name="image" type="url" required value="${esc(data.image||'')}" dir="ltr" style="text-align:left"></div>
-      ${data.image ? `<div style="margin-top:4px"><img src="${esc(data.image)}" alt="" style="width:100%;height:130px;object-fit:cover;border-radius:12px;border:1px solid var(--border-1)" onerror="this.style.display='none'"></div>` : ''}
+        <input class="inp" name="image" type="url" required value="${esc(data.image||'')}" dir="ltr" style="text-align:left;padding-left:14px"></div>
+      ${data.image?`<div><img src="${esc(data.image)}" alt="" style="width:100%;height:130px;object-fit:cover;border-radius:12px;border:1px solid var(--border-1)" onerror="this.style.display='none'"></div>`:''}
     `;
-  } else if(type === 'category'){
+  }
+  else if(type === 'category'){
     fields = `
       <div class="field"><label>الاسم بالعربي <span class="req">*</span></label>
-        <input class="inp" name="label" required value="${esc(data.label||'')}" placeholder="مثال: عائلية"></div>
+        <input class="inp" name="label" required value="${esc(data.label||'')}" style="padding-left:14px"></div>
       <div class="field"><label>المفتاح بالإنجليزي <span class="req">*</span></label>
-        <input class="inp" name="key" required value="${esc(data.key||'')}" dir="ltr" style="text-align:left" placeholder="suv" pattern="[a-z0-9_-]+"></div>
-      <div class="field"><label>أيقونة (Font Awesome)</label>
-        <input class="inp" name="icon" value="${esc(data.icon||'fa-car')}" dir="ltr" style="text-align:left" placeholder="fa-car"></div>
+        <input class="inp" name="key" required value="${esc(data.key||'')}" dir="ltr" style="text-align:left;padding-left:14px" placeholder="suv" pattern="[a-z0-9_-]+"></div>
+      <div class="field"><label>أيقونة</label>
+        <input class="inp" name="icon" value="${esc(data.icon||'fa-car')}" dir="ltr" style="text-align:left;padding-left:14px"></div>
     `;
-  } else if(type === 'company'){
+  }
+  else if(type === 'company'){
     fields = `
       <div class="field"><label>اسم الشركة <span class="req">*</span></label>
-        <input class="inp" name="name" required value="${esc(data.name||'')}" placeholder="تويوتا"></div>
+        <input class="inp" name="name" required value="${esc(data.name||'')}" style="padding-left:14px"></div>
       <div class="field"><label>رابط الشعار (اختياري)</label>
-        <input class="inp" name="logo" type="url" value="${esc(data.logo||'')}" dir="ltr" style="text-align:left"></div>
+        <input class="inp" name="logo" type="url" value="${esc(data.logo||'')}" dir="ltr" style="text-align:left;padding-left:14px"></div>
     `;
-  } else if(type === 'customer'){
+  }
+  else if(type === 'customer'){
     fields = `
       <div class="field"><label>الاسم الكامل <span class="req">*</span></label>
-        <input class="inp" name="name" required value="${esc(data.name||'')}"></div>
+        <input class="inp" name="name" required value="${esc(data.name||'')}" style="padding-left:14px"></div>
       <div class="form-row-2">
-        <div class="field"><label>رقم الجوال <span class="req">*</span></label>
-          <input class="inp" name="phone" type="tel" required value="${esc(data.phone||'')}" dir="ltr" style="text-align:right"></div>
-        <div class="field"><label>رقم الهوية</label>
-          <input class="inp" name="idNum" value="${esc(data.idNum||'')}" dir="ltr" style="text-align:right"></div>
+        <div class="field"><label>الجوال <span class="req">*</span></label>
+          <input class="inp" name="phone" type="tel" required value="${esc(data.phone||'')}" dir="ltr" style="text-align:right;padding-left:14px"></div>
+        <div class="field"><label>الهوية</label>
+          <input class="inp" name="idNum" value="${esc(data.idNum||'')}" dir="ltr" style="text-align:right;padding-left:14px"></div>
       </div>
       <div class="form-row-2">
         <div class="field"><label>العمر</label>
-          <input class="inp" name="age" type="number" min="18" max="90" value="${data.age||''}"></div>
+          <input class="inp" name="age" type="number" min="18" max="90" value="${data.age||''}" style="padding-left:14px"></div>
         <div class="field"><label>المدينة</label>
-          <input class="inp" name="city" value="${esc(data.city||'')}"></div>
+          <input class="inp" name="city" value="${esc(data.city||'')}" style="padding-left:14px"></div>
       </div>
       <div class="field"><label>ملاحظات</label>
         <textarea class="inp textarea" name="notes">${esc(data.notes||'')}</textarea></div>
     `;
-  } else if(type === 'discount'){
+  }
+  else if(type === 'discount'){
     fields = `
       <div class="field"><label>كود الخصم <span class="req">*</span></label>
-        <input class="inp" name="code" required value="${esc(data.code||'')}" style="text-transform:uppercase" placeholder="SHUFF10" oninput="this.value=this.value.toUpperCase()"></div>
+        <input class="inp" name="code" required value="${esc(data.code||'')}" style="text-transform:uppercase;padding-left:14px" placeholder="SHUFF10" oninput="this.value=this.value.toUpperCase()"></div>
       <div class="form-row-2">
-        <div class="field"><label>نوع الخصم</label>
+        <div class="field"><label>النوع</label>
           <select class="inp select" name="type">
             <option value="percent" ${data.type==='percent'?'selected':''}>نسبة %</option>
             <option value="fixed" ${data.type==='fixed'?'selected':''}>مبلغ ثابت</option>
           </select></div>
         <div class="field"><label>القيمة <span class="req">*</span></label>
-          <input class="inp" name="value" type="number" required min="0" step="1" value="${data.value||''}"></div>
+          <input class="inp" name="value" type="number" required min="0" value="${data.value||''}" style="padding-left:14px"></div>
       </div>
       <div class="form-row-2">
-        <div class="field"><label>الحد الأدنى للمبلغ</label>
-          <input class="inp" name="minAmount" type="number" min="0" value="${data.minAmount||0}"></div>
-        <div class="field"><label>الحد الأقصى للاستخدام (0 = لا نهائي)</label>
-          <input class="inp" name="maxUses" type="number" min="0" value="${data.maxUses||0}"></div>
+        <div class="field"><label>حد أدنى للمبلغ</label>
+          <input class="inp" name="minAmount" type="number" min="0" value="${data.minAmount||0}" style="padding-left:14px"></div>
+        <div class="field"><label>حد أقصى للاستخدام (0 = ∞)</label>
+          <input class="inp" name="maxUses" type="number" min="0" value="${data.maxUses||0}" style="padding-left:14px"></div>
       </div>
-      <div class="field"><label>تاريخ الانتهاء (اختياري)</label>
+      <div class="field"><label>تاريخ الانتهاء</label>
         <input class="inp" name="expires" type="date" value="${esc(data.expires||'')}"></div>
       <label class="check-row">
         <input type="checkbox" name="active" ${data.active!==false?'checked':''}>
@@ -1876,6 +1786,83 @@ function saveForm(e){
   const fd = new FormData(e.target);
   const data = Object.fromEntries(fd.entries());
 
+  /* ═════════ حفظ حجز ═════════ */
+  if(type === 'booking'){
+    const car = state.cars.find(c => String(c.id) === String(data.carId));
+    if(!car) return showToast('اختر مركبة أولاً', 'error');
+    if(!data.customerName || !data.customerPhone) return showToast('اسم وجوال العميل مطلوبان', 'error');
+
+    const calc = state.bookingCalc || { base: 0, total: 0, discountAmount: 0, code: '' };
+    const original = id ? findBooking(id) : null;
+    const nowIso = new Date().toISOString();
+
+    const bookingData = {
+      id: id || ('SHF-' + Math.floor(10000 + Math.random() * 90000)),
+      carId: car.id,
+      carName: car.name,
+      carImage: car.image,
+      pickupDate: data.pickupDate,
+      days: Number(data.days) || 1,
+      delivery: data.delivery,
+      originalTotal: calc.base,
+      discountCode: calc.code,
+      discountAmount: calc.discountAmount,
+      total: calc.total,
+      customerName: data.customerName.trim(),
+      customerPhone: data.customerPhone.trim(),
+      customerIdNum: (data.customerIdNum||'').trim(),
+      notes: (data.notes||'').trim(),
+      status: data.status || ST_PENDING,
+      createdAt: original ? original.createdAt : nowTime(),
+      adminCreated: original ? !!original.adminCreated : true
+    };
+
+    /* الحفاظ على بيانات الدفع عند التعديل */
+    if(original){
+      if(original.paidAt) bookingData.paidAt = original.paidAt;
+      if(original.paymentRef) bookingData.paymentRef = original.paymentRef;
+      if(original.paymentMethod) bookingData.paymentMethod = original.paymentMethod;
+      if(original.approvedAt) bookingData.approvedAt = original.approvedAt;
+      if(original.cancelledAt) bookingData.cancelledAt = original.cancelledAt;
+      if(original.completedAt) bookingData.completedAt = original.completedAt;
+    }
+
+    /* توليد الدفع إذا الحالة مدفوعة/مكتملة ولم يوجد دفع */
+    const needsPayment = bookingData.status === ST_PAID || bookingData.status === ST_COMPLETED;
+    if(needsPayment && !bookingData.paidAt){
+      bookingData.paidAt = nowIso;
+      bookingData.paymentRef = bookingData.paymentRef || ('ADMIN-' + Date.now().toString(36).toUpperCase().slice(-6));
+      bookingData.paymentMethod = bookingData.paymentMethod || 'admin';
+      try{
+        state.payments.push({
+          id:'pmt_'+Date.now(), bookingId:bookingData.id, amount:Number(bookingData.total)||0,
+          method:'admin', ref:bookingData.paymentRef, paidAt:nowIso, manual:true
+        });
+        saveCollection(KEYS.payments, state.payments);
+      }catch(err){}
+    }
+
+    /* إضافة تلقائية للعميل إن لم يكن موجوداً */
+    if(bookingData.customerName && bookingData.customerPhone){
+      const exists = state.customers.some(c => c.phone === bookingData.customerPhone);
+      if(!exists){
+        state.customers.push({
+          id: genId('cus'), name: bookingData.customerName,
+          phone: bookingData.customerPhone, idNum: bookingData.customerIdNum,
+          createdAt: nowIso, autoCreated: true
+        });
+        saveCollection(KEYS.customers, state.customers);
+      }
+    }
+
+    saveItem('booking', bookingData);
+    closeForm();
+    renderAll();
+    showToast(id ? 'تم تحديث الحجز' : 'تم إنشاء الحجز بنجاح');
+    return;
+  }
+
+  /* ═════════ باقي الأنواع ═════════ */
   if(type === 'car'){
     data.price = Number(data.price) || 0;
     const cat = state.categories.find(c => c.key === data.category);
@@ -1884,7 +1871,7 @@ function saveForm(e){
   } else if(type === 'discount'){
     data.code = (data.code || '').toUpperCase().trim();
     if(!data.code) return showToast('الكود مطلوب','error');
-    if(state.discounts.some(d => d.code === data.code && String(d.id) !== String(id))) return showToast('الكود مستخدم مسبقاً','error');
+    if(state.discounts.some(d => d.code === data.code && String(d.id) !== String(id))) return showToast('الكود مستخدم','error');
     data.value = Number(data.value) || 0;
     data.minAmount = Number(data.minAmount) || 0;
     data.maxUses = Number(data.maxUses) || 0;
@@ -1916,13 +1903,12 @@ function askDeleteItem(type, id){
   const label = item.name || item.label || item.code || 'العنصر';
   const typeLabel = { car:'المركبة', category:'القسم', company:'الشركة', customer:'العميل', discount:'الخصم' }[type];
   openConfirm({
-    title: 'حذف ' + typeLabel, text: 'سيتم حذف "' + label + '" نهائياً',
+    title:'حذف ' + typeLabel, text:'سيتم حذف "' + label + '" نهائياً',
     icon:'fa-trash-can', variant:'danger', okLabel:'حذف', okIcon:'fa-trash-can', details:'',
-    action: () => { deleteItem(type, id); renderAll(); showToast('تم الحذف','error'); }
+    action:() => { deleteItem(type, id); renderAll(); showToast('تم الحذف','error'); }
   });
 }
 
-/* ═════════ Confirm ═════════ */
 function openConfirm(opts){
   state.pendingAction = opts.action || null;
   $('confirmTitle').textContent = opts.title || 'تأكيد';
@@ -1949,18 +1935,16 @@ function runConfirm(){
   if(typeof fn === 'function') fn();
 }
 
-/* ═════════ Refresh / Logout ═════════ */
 function refreshData(){ loadAll(); renderAll(); showToast('تم تحديث البيانات'); }
 function handleLogout(){
   openConfirm({
     title:'تسجيل الخروج', text:'سيتم الرجوع إلى صفحة الموقع',
     icon:'fa-arrow-right-from-bracket', variant:'danger',
     okLabel:'خروج', okIcon:'fa-arrow-right-from-bracket', details:'',
-    action: () => { window.location.href = 'home.html'; }
+    action:() => { window.location.href = 'home.html'; }
   });
 }
 
-/* ═════════ Toast ═════════ */
 let toastTimer = null;
 function showToast(msg, type){
   type = type || 'success';
@@ -1973,7 +1957,6 @@ function showToast(msg, type){
   toastTimer = setTimeout(() => $('toast').classList.remove('show'), 2400);
 }
 
-/* ═════════ Render All ═════════ */
 function renderAll(){
   renderDashboard();
   renderStatusFilters();
@@ -1995,7 +1978,6 @@ function renderAll(){
   }
 }
 
-/* ═════════ Boot ═════════ */
 window.addEventListener('load', () => {
   initTheme();
   loadAll();
@@ -2003,24 +1985,19 @@ window.addEventListener('load', () => {
 
   const hash = (location.hash || '').replace('#','');
   if(hash && document.getElementById('view-'+hash)) switchView(hash);
-
   window.addEventListener('hashchange', () => {
     const h = (location.hash||'').replace('#','');
     if(h && document.getElementById('view-'+h)) switchView(h);
   });
-
   window.addEventListener('storage', (e) => {
     if(!e.key || !Object.values(KEYS).includes(e.key)) return;
-    loadAll();
-    renderAll();
+    loadAll(); renderAll();
     if(e.key === KEYS.theme) applyTheme(localStorage.getItem(KEYS.theme) !== 'light');
     showToast('تمت مزامنة البيانات');
   });
-
   document.addEventListener('visibilitychange', () => {
     if(document.visibilityState === 'visible'){ loadAll(); renderAll(); }
   });
-
   document.addEventListener('keydown', (e) => {
     if(e.key !== 'Escape') return;
     if($('confirmDialog').classList.contains('active')) return closeConfirm();
@@ -2028,7 +2005,6 @@ window.addEventListener('load', () => {
     if($('payLinkSheet').classList.contains('active')) return closePayLink();
     if($('detailSheet').classList.contains('active')) return closeDetails();
   });
-
   ['detailSheet','formSheet','payLinkSheet'].forEach(id => {
     $(id).addEventListener('touchmove', (e) => {
       if(!e.target.closest('.sheet')) e.preventDefault();
@@ -2039,10 +2015,7 @@ window.addEventListener('load', () => {
   }, {passive:false});
 });
 
-function closeDetails(){
-  $('detailSheet').classList.remove('active');
-  unlockBody();
-}
+function closeDetails(){ $('detailSheet').classList.remove('active'); unlockBody(); }
 </script>
 </body>
 </html>
