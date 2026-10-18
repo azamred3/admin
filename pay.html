@@ -1,0 +1,709 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" class="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="robots" content="noindex,nofollow">
+<title>شفل | الدفع الآمن — SHUFF PAYMENT</title>
+<meta name="theme-color" content="#050505">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+<style>
+:root{
+  --orange:#FF6B00;--orange-2:#FF9040;--orange-3:#FFB884;
+  --orange-glow:rgba(255,107,0,.4);
+  --green:#34C759;--red:#FF453A;--amber:#FFCC00;--blue:#0A84FF;
+  --safe-top:env(safe-area-inset-top,0px);
+  --safe-bottom:env(safe-area-inset-bottom,0px);
+}
+html.dark{
+  --bg:#050505;--bg-gradient:linear-gradient(180deg,#0a0a0c 0%,#050505 100%);
+  --fg:#fff;--fg-2:rgba(255,255,255,.65);--fg-3:rgba(255,255,255,.4);--fg-4:rgba(255,255,255,.22);
+  --surface-1:rgba(255,255,255,.035);--surface-2:rgba(255,255,255,.06);--surface-3:rgba(255,255,255,.1);
+  --border-1:rgba(255,255,255,.08);--border-2:rgba(255,255,255,.14);--border-3:rgba(255,255,255,.22);
+  --glass-bg:rgba(10,10,14,.78);--glass-bg-2:rgba(14,14,18,.92);
+  --sheet-bg:linear-gradient(180deg,#0e0e12 0%,#07070a 100%);
+  --card-img-bg:linear-gradient(160deg,#15151a,#08080a);
+  --card-body-bg:linear-gradient(160deg,rgba(255,255,255,.04),rgba(255,255,255,.008));
+  --shadow-md:0 12px 30px -12px rgba(0,0,0,.6);
+  --shadow-lg:0 20px 45px -18px rgba(0,0,0,.75);
+  --shadow-xl:0 30px 70px -25px rgba(0,0,0,.9);
+  --orb-1:rgba(255,107,0,.35);--orb-2:rgba(52,199,89,.2);
+}
+html.light{
+  --bg:#F4F4F7;--bg-gradient:linear-gradient(180deg,#FAFAFC 0%,#F0F0F4 100%);
+  --fg:#000;--fg-2:rgba(0,0,0,.62);--fg-3:rgba(0,0,0,.42);--fg-4:rgba(0,0,0,.2);
+  --surface-1:rgba(0,0,0,.028);--surface-2:rgba(0,0,0,.05);--surface-3:rgba(0,0,0,.08);
+  --border-1:rgba(0,0,0,.06);--border-2:rgba(0,0,0,.1);--border-3:rgba(0,0,0,.16);
+  --glass-bg:rgba(255,255,255,.82);--glass-bg-2:rgba(255,255,255,.95);
+  --sheet-bg:linear-gradient(180deg,#fff 0%,#f5f5f7 100%);
+  --card-img-bg:linear-gradient(160deg,#eee,#e0e0e5);
+  --card-body-bg:linear-gradient(160deg,rgba(0,0,0,.02),rgba(0,0,0,.005));
+  --shadow-md:0 12px 30px -12px rgba(0,0,0,.12);
+  --shadow-lg:0 20px 45px -18px rgba(0,0,0,.14);
+  --shadow-xl:0 30px 70px -25px rgba(0,0,0,.18);
+  --orb-1:rgba(255,107,0,.22);--orb-2:rgba(52,199,89,.15);
+}
+*,*::before,*::after{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html,body{margin:0;padding:0;overscroll-behavior-y:none;background:var(--bg)}
+body{font-family:'Tajawal',-apple-system,BlinkMacSystemFont,sans-serif;color:var(--fg);letter-spacing:-.01em;min-height:100vh;min-height:100dvh;padding-bottom:calc(28px + var(--safe-bottom))}
+img{display:block;max-width:100%}
+button{font-family:inherit;cursor:pointer;border:none;background:none;padding:0;color:inherit}
+input,select{font-family:inherit;user-select:text}
+.no-select{user-select:none;-webkit-user-select:none}
+
+.aurora{position:fixed;inset:0;z-index:0;overflow:hidden;pointer-events:none;background:var(--bg-gradient);contain:strict}
+.orb{position:absolute;border-radius:50%;filter:blur(55px)}
+.orb-1{width:340px;height:340px;top:-120px;right:-110px;background:radial-gradient(circle,var(--orb-1) 0%,transparent 70%);animation:orb1 26s ease-in-out infinite}
+.orb-2{width:400px;height:400px;bottom:-180px;left:-150px;background:radial-gradient(circle,var(--orb-2) 0%,transparent 70%);animation:orb2 32s ease-in-out infinite}
+@keyframes orb1{0%,100%{transform:translate3d(0,0,0) scale(1)}50%{transform:translate3d(-40px,60px,0) scale(1.1)}}
+@keyframes orb2{0%,100%{transform:translate3d(0,0,0) scale(1)}50%{transform:translate3d(50px,-40px,0) scale(1.12)}}
+
+.pay-shell{position:relative;z-index:1;max-width:480px;margin:0 auto;padding:calc(20px + var(--safe-top)) 16px 24px}
+
+.pay-brand{display:flex;align-items:center;gap:11px;margin-bottom:24px;justify-content:center}
+.brand-mark{width:40px;height:40px;border-radius:12px;background:linear-gradient(135deg,var(--orange),var(--orange-2));display:grid;place-items:center;color:#fff;font-weight:900;font-size:14px;box-shadow:0 6px 16px -4px var(--orange-glow),inset 0 1px 0 rgba(255,255,255,.35)}
+.brand-text{display:flex;flex-direction:column;line-height:1.05}
+.brand-text b{font-size:14.5px;font-weight:900;letter-spacing:-.02em;color:var(--fg)}
+.brand-text b span{color:var(--orange)}
+.brand-text small{font-size:8.5px;font-weight:700;color:var(--fg-3);letter-spacing:.16em;margin-top:3px}
+
+.secure-banner{
+  display:flex;align-items:center;justify-content:center;gap:7px;
+  padding:8px 12px;border-radius:99px;margin:0 auto 16px;width:fit-content;
+  background:rgba(52,199,89,.1);border:1px solid rgba(52,199,89,.24);
+  color:var(--green);font-size:10.5px;font-weight:800;letter-spacing:.04em;
+}
+.secure-banner i{font-size:10px}
+
+.card{
+  background:var(--card-body-bg);border:1px solid var(--border-1);
+  border-radius:20px;padding:18px;margin-bottom:14px;
+}
+.card h1,.card h2{margin:0 0 4px;font-size:17px;font-weight:900;letter-spacing:-.03em;color:var(--fg)}
+.card .sub{margin:0 0 14px;font-size:11.5px;color:var(--fg-2);line-height:1.6}
+
+.car-summary{
+  display:flex;gap:12px;align-items:center;padding:12px;border-radius:14px;
+  background:var(--surface-1);border:1px solid var(--border-1);margin-bottom:14px;
+}
+.car-summary img{width:64px;height:64px;border-radius:11px;object-fit:cover;flex-shrink:0;border:1px solid var(--border-1);background:var(--card-img-bg)}
+.car-summary-info{flex:1;min-width:0}
+.car-summary-info h4{margin:0 0 3px;font-size:12.5px;font-weight:800;color:var(--fg);overflow:hidden;text-overflow:ellipsis;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;line-height:1.35}
+.car-summary-info p{margin:0;font-size:10.5px;color:var(--fg-2);font-weight:600}
+.car-summary-tag{display:inline-block;padding:2px 7px;border-radius:99px;font-size:8.5px;font-weight:800;color:var(--orange-3);background:rgba(255,107,0,.14);border:1px solid rgba(255,107,0,.28);margin-bottom:4px}
+
+.d-rows{border-radius:14px;border:1px solid var(--border-1);overflow:hidden;margin-bottom:14px;background:var(--surface-1)}
+.d-row{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:11px 13px;font-size:11.5px}
+.d-row:not(:last-child){border-bottom:1px solid var(--border-1)}
+.d-row .k{display:flex;align-items:center;gap:8px;color:var(--fg-2);font-weight:600;flex-shrink:0}
+.d-row .k i{color:var(--orange);font-size:10.5px;width:13px;text-align:center}
+.d-row .v{color:var(--fg);font-weight:800;text-align:left;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-variant-numeric:tabular-nums}
+.d-row .v.ltr{direction:ltr}
+.d-row .v.money{color:var(--green);font-size:14px}
+.d-row .v.discount{color:#5AE07A;font-size:12px}
+.d-row.total{background:linear-gradient(135deg,rgba(255,107,0,.08),rgba(255,107,0,.02));padding:13px}
+.d-row.total .k{color:var(--orange);font-weight:800;font-size:12.5px}
+.d-row.total .v{color:var(--orange-3);font-size:19px;font-weight:900}
+
+/* Payment methods */
+.method-tabs{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;margin-bottom:16px}
+.method-tab{
+  padding:11px 4px;border-radius:12px;background:var(--surface-1);border:1.5px solid var(--border-1);
+  display:flex;flex-direction:column;align-items:center;gap:5px;cursor:pointer;
+  transition:.25s;color:var(--fg-2);
+}
+.method-tab i{font-size:17px}
+.method-tab span{font-size:9.5px;font-weight:800;letter-spacing:-.01em}
+.method-tab:hover{border-color:var(--border-2);color:var(--fg)}
+.method-tab.active{border-color:var(--orange);background:rgba(255,107,0,.08);color:var(--orange);box-shadow:0 0 0 3px rgba(255,107,0,.1)}
+.method-tab.applepay.active{border-color:#fff;background:rgba(255,255,255,.08);color:#fff}
+.method-tab.applepay i{font-size:19px}
+
+/* Card form */
+.pay-form{display:grid;gap:11px}
+.field{display:flex;flex-direction:column;gap:5px}
+.field label{font-size:10.5px;font-weight:800;color:var(--fg-2);padding-inline-start:2px}
+.field label .req{color:var(--red);margin-inline-start:2px}
+.inp{
+  width:100%;padding:12px 14px;border-radius:12px;
+  background:var(--surface-1);border:1.5px solid var(--border-1);
+  color:var(--fg);font-size:16px;font-weight:500;outline:none;
+  transition:.2s;min-height:46px;-webkit-appearance:none;appearance:none;
+}
+.inp::placeholder{color:var(--fg-4);font-weight:400;font-size:12.5px}
+.inp:focus{border-color:rgba(255,107,0,.5);background:var(--surface-2);box-shadow:0 0 0 3px rgba(255,107,0,.1)}
+.inp.ltr{direction:ltr;text-align:left;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;letter-spacing:.05em}
+.inp.error{border-color:rgba(255,69,58,.5);background:rgba(255,69,58,.06)}
+.inp-error{font-size:10px;color:var(--red);font-weight:700;padding-inline-start:2px;display:none}
+.inp-error.show{display:block}
+
+.card-row{display:grid;grid-template-columns:1.6fr 1fr 1fr;gap:8px}
+@media(max-width:420px){.card-row{grid-template-columns:1fr 1fr}}
+
+/* Apple Pay */
+.applepay-btn{
+  width:100%;padding:16px;border-radius:14px;background:#000;color:#fff;
+  display:flex;align-items:center;justify-content:center;gap:8px;
+  font-size:15px;font-weight:800;letter-spacing:-.02em;
+  box-shadow:0 12px 24px -8px rgba(0,0,0,.6),inset 0 1px 0 rgba(255,255,255,.15);
+  transition:.25s;min-height:56px;
+}
+html.light .applepay-btn{background:#000;color:#fff}
+.applepay-btn:hover{transform:translateY(-1px)}
+.applepay-btn:active{transform:scale(.98)}
+.applepay-btn i{font-size:20px}
+.applepay-note{margin-top:10px;font-size:10.5px;color:var(--fg-3);text-align:center;font-weight:600}
+
+/* STC Pay */
+.stc-note{
+  display:flex;gap:9px;padding:11px 13px;border-radius:12px;
+  background:rgba(76,150,255,.08);border:1px solid rgba(76,150,255,.22);
+  color:var(--fg-2);font-size:10.5px;font-weight:600;line-height:1.6;margin-bottom:12px;
+}
+.stc-note i{color:#4C96FF;font-size:12px;flex-shrink:0;margin-top:2px}
+
+/* Bank */
+.bank-info{background:var(--surface-1);border:1px solid var(--border-1);border-radius:12px;padding:14px;margin-bottom:12px}
+.bank-info .row{display:flex;align-items:center;justify-content:space-between;gap:10px;font-size:11.5px;padding:5px 0}
+.bank-info .row:not(:last-child){border-bottom:1px dashed var(--border-1)}
+.bank-info .row span{color:var(--fg-2);font-weight:600}
+.bank-info .row b{color:var(--fg);font-weight:800;direction:ltr;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;letter-spacing:.04em}
+
+/* Buttons */
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:8px;
+  padding:13px 18px;border-radius:13px;font-size:13px;font-weight:800;
+  transition:.25s;min-height:48px;white-space:nowrap;text-decoration:none;
+}
+.btn:active{transform:scale(.98)}
+.btn.primary{
+  background:linear-gradient(135deg,var(--orange),var(--orange-2));color:#fff;
+  box-shadow:0 12px 24px -8px var(--orange-glow),inset 0 1px 0 rgba(255,255,255,.3);
+  width:100%;
+}
+.btn.primary:hover{box-shadow:0 16px 30px -8px var(--orange-glow)}
+.btn.primary:disabled{opacity:.55;cursor:not-allowed;transform:none}
+.btn.soft{background:var(--surface-2);border:1px solid var(--border-1);color:var(--fg-2);width:100%}
+.btn.soft:hover{background:var(--surface-3);color:var(--fg)}
+
+/* States */
+.state{text-align:center;padding:32px 14px}
+.state-icon{width:78px;height:78px;margin:0 auto 16px;border-radius:24px;display:grid;place-items:center;font-size:32px}
+.state-icon.success{background:rgba(52,199,89,.12);border:1px solid rgba(52,199,89,.3);color:var(--green);box-shadow:0 20px 40px -12px rgba(52,199,89,.35)}
+.state-icon.error{background:rgba(255,69,58,.12);border:1px solid rgba(255,69,58,.3);color:var(--red);box-shadow:0 20px 40px -12px rgba(255,69,58,.35)}
+.state-icon.warning{background:rgba(255,204,0,.12);border:1px solid rgba(255,204,0,.3);color:var(--amber)}
+.state-icon.info{background:rgba(255,107,0,.12);border:1px solid rgba(255,107,0,.3);color:var(--orange)}
+.state h2{margin:0 0 6px;font-size:19px;font-weight:900;letter-spacing:-.03em;color:var(--fg)}
+.state p{margin:0 0 20px;font-size:12.5px;color:var(--fg-2);line-height:1.7}
+
+/* Spinner */
+.spinner{
+  width:58px;height:58px;margin:0 auto 18px;border-radius:50%;
+  border:4px solid var(--surface-3);border-top-color:var(--orange);
+  animation:spin 0.85s linear infinite;
+}
+@keyframes spin{to{transform:rotate(360deg)}}
+
+/* Loading state */
+.loading-state{display:flex;flex-direction:column;align-items:center;justify-content:center;padding:80px 20px}
+
+/* Footer */
+.pay-footer{text-align:center;margin-top:18px;font-size:10px;color:var(--fg-3);font-weight:600;line-height:1.6}
+.pay-footer a{color:var(--orange);font-weight:800;text-decoration:none}
+
+@keyframes fadeUp{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
+.fade-up{animation:fadeUp .5s cubic-bezier(.2,1,.3,1) both}
+
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}}
+@supports (-webkit-touch-callout:none){.inp{font-size:16px!important}}
+</style>
+</head>
+<body>
+
+<div class="aurora"><div class="orb orb-1"></div><div class="orb orb-2"></div></div>
+
+<div class="pay-shell">
+  <div class="pay-brand no-select">
+    <div class="brand-mark">شفل</div>
+    <div class="brand-text">
+      <b>شفل <span>SHUFF</span></b>
+      <small>SECURE PAYMENT</small>
+    </div>
+  </div>
+
+  <div class="secure-banner no-select">
+    <i class="fa-solid fa-shield-halved"></i>
+    اتصال آمن ومشفّر
+  </div>
+
+  <div id="payContent">
+    <div class="loading-state">
+      <div class="spinner"></div>
+      <p style="color:var(--fg-2);font-size:12px;font-weight:600">جاري تحميل بيانات الحجز...</p>
+    </div>
+  </div>
+
+  <div class="pay-footer no-select">
+    بإتمامك الدفع أنت توافق على <a href="#">شروط الخدمة</a> و<a href="#">سياسة الاسترداد</a> الخاصة بشفل.
+  </div>
+</div>
+
+<div id="toast" class="toast" style="display:none"></div>
+
+<script>
+'use strict';
+
+const KEYS = { bookings:'shuff_bookings', discounts:'shuff_discounts', payments:'shuff_payments' };
+const ST_PENDING='قيد المراجعة', ST_AWAITING='بانتظار الدفع', ST_PAID='مدفوع', ST_CANCELLED='ملغي', ST_COMPLETED='مكتمل', ST_APPROVED='معتمد';
+const BANK_INFO = { bank:'مصرف الراجحي', name:'شركة شفل لتأجير السيارات', iban:'SA44 8000 0000 6080 1016 6995' };
+
+const state = {
+  booking: null,
+  method: 'card',
+  submitting: false,
+  paidRef: null
+};
+
+function $(id){ return document.getElementById(id); }
+function esc(v){ return String(v==null?'':v).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c])); }
+function fmt(n){ const x=Number(n); return Number.isFinite(x)?x.toLocaleString('en-US'):'0'; }
+function clone(o){ return JSON.parse(JSON.stringify(o)); }
+
+function loadBookings(){
+  try{ const raw = localStorage.getItem(KEYS.bookings); return raw ? (JSON.parse(raw)||[]) : []; }
+  catch(e){ return []; }
+}
+function saveBookings(arr){
+  try{ localStorage.setItem(KEYS.bookings, JSON.stringify(arr)); return true; }
+  catch(e){ return false; }
+}
+function loadCollection(key, def){
+  try{ const raw = localStorage.getItem(key); return raw ? JSON.parse(raw) : clone(def); }
+  catch(e){ return clone(def); }
+}
+
+/* ═════════ Init ═════════ */
+function init(){
+  const params = new URLSearchParams(location.search);
+  const id = params.get('id');
+  if(!id) return showState('not_found');
+
+  const bookings = loadBookings();
+  const booking = bookings.find(b => String(b.id) === String(id));
+  if(!booking) return showState('not_found');
+
+  state.booking = booking;
+
+  if(booking.status === ST_PAID || booking.status === ST_COMPLETED){
+    return showState('already_paid', { booking });
+  }
+  if(booking.status === ST_CANCELLED){
+    return showState('cancelled', { booking });
+  }
+
+  showState('summary', { booking });
+}
+
+/* ═════════ State render ═════════ */
+function showState(name, ctx){
+  ctx = ctx || {};
+  const c = $('payContent');
+  const b = ctx.booking || state.booking;
+
+  if(name === 'not_found'){
+    c.innerHTML = `
+      <div class="card fade-up">
+        <div class="state">
+          <div class="state-icon warning"><i class="fa-solid fa-circle-question"></i></div>
+          <h2>الرابط غير صالح</h2>
+          <p>لم نعثر على الحجز المطلوب. تأكد من الرابط المُرسل إليك أو تواصل مع الدعم.</p>
+          <a class="btn soft" href="https://wa.me/966511749598" target="_blank" rel="noopener"><i class="fa-brands fa-whatsapp"></i> التواصل مع الدعم</a>
+        </div>
+      </div>`;
+    return;
+  }
+  if(name === 'already_paid'){
+    c.innerHTML = `
+      <div class="card fade-up">
+        <div class="state">
+          <div class="state-icon success"><i class="fa-solid fa-circle-check"></i></div>
+          <h2>الحجز مدفوع مسبقاً</h2>
+          <p>تم دفع هذا الحجز سابقاً. رقم الحجز: <b style="color:var(--orange);direction:ltr;display:inline-block">${esc(b.id)}</b></p>
+        </div>
+        ${paymentSummaryHTML(b)}
+      </div>`;
+    return;
+  }
+  if(name === 'cancelled'){
+    c.innerHTML = `
+      <div class="card fade-up">
+        <div class="state">
+          <div class="state-icon error"><i class="fa-solid fa-ban"></i></div>
+          <h2>الحجز ملغي</h2>
+          <p>تم إلغاء هذا الحجز. تواصل مع الدعم إن كان لديك استفسار.</p>
+          <a class="btn soft" href="https://wa.me/966511749598" target="_blank" rel="noopener"><i class="fa-brands fa-whatsapp"></i> التواصل مع الدعم</a>
+        </div>
+      </div>`;
+    return;
+  }
+  if(name === 'processing'){
+    c.innerHTML = `
+      <div class="card fade-up">
+        <div class="state">
+          <div class="spinner"></div>
+          <h2>جاري معالجة الدفع</h2>
+          <p>الرجاء الانتظار قليلاً...</p>
+        </div>
+      </div>`;
+    return;
+  }
+  if(name === 'success'){
+    c.innerHTML = `
+      <div class="card fade-up">
+        <div class="state">
+          <div class="state-icon success"><i class="fa-solid fa-circle-check"></i></div>
+          <h2>تم الدفع بنجاح</h2>
+          <p>شكراً لك! تم استلام مبلغ <b style="color:var(--green)">${fmt(b.total)} ريال</b>. سيتواصل معك فريق شفل قريباً لتنسيق الاستلام.</p>
+        </div>
+        ${paymentSummaryHTML(b)}
+        <div style="margin-top:14px">
+          <a class="btn primary" href="https://wa.me/966511749598?text=${encodeURIComponent('مرحباً، دفعت الحجز '+b.id)}" target="_blank" rel="noopener"><i class="fa-brands fa-whatsapp"></i> تأكيد الاستلام عبر واتساب</a>
+        </div>
+      </div>`;
+    return;
+  }
+  if(name === 'error'){
+    c.innerHTML = `
+      <div class="card fade-up">
+        <div class="state">
+          <div class="state-icon error"><i class="fa-solid fa-triangle-exclamation"></i></div>
+          <h2>تعذّر إتمام الدفع</h2>
+          <p>${esc(ctx.message || 'حدث خطأ غير متوقع. حاول مرة أخرى.')}</p>
+          <button class="btn soft" onclick="init()"><i class="fa-solid fa-rotate"></i> إعادة المحاولة</button>
+        </div>
+      </div>`;
+    return;
+  }
+  if(name === 'summary'){
+    c.innerHTML = summaryHTML(b);
+    bindSummary(b);
+  }
+}
+
+/* ═════════ Summary HTML ═════════ */
+function summaryHTML(b){
+  const original = b.originalTotal || b.total;
+  const discount = Number(b.discountAmount) || 0;
+  return `
+    <div class="card fade-up">
+      <h1>ملخص الحجز</h1>
+      <p class="sub">راجع التفاصيل ثم أكمل الدفع بأمان</p>
+
+      <div class="car-summary">
+        ${b.carImage ? `<img src="${esc(b.carImage)}" alt="">` : ''}
+        <div class="car-summary-info">
+          ${b.carName ? `<span class="car-summary-tag">${esc(b.days||1)} أيام</span>` : ''}
+          <h4>${esc(b.carName||'—')}</h4>
+          <p>${esc(b.delivery||'استلام من الفرع')}</p>
+        </div>
+      </div>
+
+      <div class="d-rows">
+        <div class="d-row"><span class="k"><i class="fa-solid fa-hashtag"></i>رقم الحجز</span><span class="v ltr">${esc(b.id)}</span></div>
+        ${b.pickupDate?`<div class="d-row"><span class="k"><i class="fa-solid fa-calendar"></i>تاريخ الاستلام</span><span class="v ltr">${esc(b.pickupDate)}</span></div>`:''}
+        <div class="d-row"><span class="k"><i class="fa-solid fa-clock"></i>المدة</span><span class="v">${esc(b.days||1)} أيام</span></div>
+        <div class="d-row"><span class="k"><i class="fa-solid fa-truck-fast"></i>التسليم</span><span class="v">${esc(b.delivery||'استلام من الفرع')}</span></div>
+        ${discount?`<div class="d-row"><span class="k"><i class="fa-solid fa-tag"></i>قبل الخصم</span><span class="v">${fmt(original)} ر.س</span></div>
+             <div class="d-row"><span class="k"><i class="fa-solid fa-percent"></i>خصم (${esc(b.discountCode||'')})</span><span class="v discount">- ${fmt(discount)} ر.س</span></div>`:''}
+      </div>
+
+      <div class="d-rows">
+        <div class="d-row total"><span class="k"><i class="fa-solid fa-sack-dollar"></i>الإجمالي المطلوب</span><span class="v">${fmt(b.total)} ر.س</span></div>
+      </div>
+
+      <h2 style="margin-top:16px">طريقة الدفع</h2>
+      <p class="sub">اختر طريقة الدفع المفضّلة</p>
+
+      <div class="method-tabs no-select" id="methodTabs">
+        <button class="method-tab active" data-method="card"><i class="fa-solid fa-credit-card"></i><span>بطاقة</span></button>
+        <button class="method-tab applepay" data-method="applepay"><i class="fa-brands fa-apple-pay"></i><span>Apple Pay</span></button>
+        <button class="method-tab" data-method="stcpay"><i class="fa-solid fa-mobile-screen"></i><span>STC Pay</span></button>
+        <button class="method-tab" data-method="bank"><i class="fa-solid fa-building-columns"></i><span>تحويل</span></button>
+      </div>
+
+      <div id="methodBody"></div>
+    </div>
+  `;
+}
+
+function paymentSummaryHTML(b){
+  return `
+    <div class="d-rows">
+      <div class="d-row"><span class="k"><i class="fa-solid fa-hashtag"></i>رقم الحجز</span><span class="v ltr">${esc(b.id)}</span></div>
+      ${b.carName?`<div class="d-row"><span class="k"><i class="fa-solid fa-car"></i>السيارة</span><span class="v">${esc(b.carName)}</span></div>`:''}
+      <div class="d-row"><span class="k"><i class="fa-solid fa-sack-dollar"></i>المبلغ</span><span class="v money">${fmt(b.total)} ر.س</span></div>
+      ${b.paymentMethod?`<div class="d-row"><span class="k"><i class="fa-solid fa-credit-card"></i>الطريقة</span><span class="v">${esc(methodLabel(b.paymentMethod))}</span></div>`:''}
+      ${b.paymentRef?`<div class="d-row"><span class="k"><i class="fa-solid fa-receipt"></i>المرجع</span><span class="v ltr">${esc(b.paymentRef)}</span></div>`:''}
+      ${b.paidAt?`<div class="d-row"><span class="k"><i class="fa-solid fa-calendar-check"></i>التاريخ</span><span class="v">${esc(new Date(b.paidAt).toLocaleString('ar-SA'))}</span></div>`:''}
+    </div>`;
+}
+
+function methodLabel(m){
+  return { card:'بطاقة مدى/فيزا', applepay:'Apple Pay', stcpay:'STC Pay', bank:'تحويل بنكي' }[m] || m;
+}
+
+/* ═════════ Bind summary ═════════ */
+function bindSummary(b){
+  const tabs = document.querySelectorAll('.method-tab');
+  tabs.forEach(t => t.addEventListener('click', () => {
+    tabs.forEach(x => x.classList.remove('active'));
+    t.classList.add('active');
+    state.method = t.dataset.method;
+    renderMethodBody();
+  }));
+  renderMethodBody();
+}
+
+/* ═════════ Method body ═════════ */
+function renderMethodBody(){
+  const body = $('methodBody');
+  const m = state.method;
+  if(m === 'card'){
+    body.innerHTML = `
+      <form class="pay-form" id="cardForm" onsubmit="submitCard(event)">
+        <div class="field">
+          <label>رقم البطاقة <span class="req">*</span></label>
+          <input class="inp ltr" id="cardNumber" name="number" inputmode="numeric" autocomplete="cc-number" placeholder="0000 0000 0000 0000" maxlength="19" required>
+          <div class="inp-error" id="errNumber">رقم البطاقة غير صحيح</div>
+        </div>
+        <div class="field">
+          <label>اسم حامل البطاقة <span class="req">*</span></label>
+          <input class="inp" name="holder" autocomplete="cc-name" placeholder="الاسم كما يظهر على البطاقة" required>
+        </div>
+        <div class="card-row">
+          <div class="field">
+            <label>تاريخ الانتهاء <span class="req">*</span></label>
+            <input class="inp ltr" id="cardExpiry" name="expiry" inputmode="numeric" autocomplete="cc-exp" placeholder="MM/YY" maxlength="5" required>
+            <div class="inp-error" id="errExpiry">التاريخ غير صحيح</div>
+          </div>
+          <div class="field">
+            <label>CVV <span class="req">*</span></label>
+            <input class="inp ltr" id="cardCvv" name="cvv" inputmode="numeric" autocomplete="cc-csc" placeholder="123" maxlength="4" required>
+            <div class="inp-error" id="errCvv">CVV غير صحيح</div>
+          </div>
+        </div>
+        <div style="margin-top:6px">
+          <button type="submit" class="btn primary" id="payBtn">
+            <i class="fa-solid fa-lock"></i> دفع ${fmt(state.booking.total)} ر.س
+          </button>
+        </div>
+      </form>`;
+    bindCardInputs();
+  } else if(m === 'applepay'){
+    body.innerHTML = `
+      <div class="stc-note" style="background:rgba(255,255,255,.05);border-color:var(--border-1);color:var(--fg-2)">
+        <i class="fa-brands fa-apple"></i>
+        <span>سيتم فتح نافذة Apple Pay لتأكيد الدفع بأمان عبر Face ID أو Touch ID.</span>
+      </div>
+      <button class="applepay-btn" onclick="submitApplePay()">
+        <i class="fa-brands fa-apple-pay"></i>
+        دفع باستخدام Apple Pay
+      </button>
+      <div class="applepay-note">${fmt(state.booking.total)} ر.س</div>
+    `;
+  } else if(m === 'stcpay'){
+    body.innerHTML = `
+      <div class="stc-note">
+        <i class="fa-solid fa-mobile-screen"></i>
+        <span>أدخل رقم جوالك المرتبط بمحفظة STC Pay. سيصلك إشعار لتأكيد الدفع.</span>
+      </div>
+      <form class="pay-form" id="stcForm" onsubmit="submitStc(event)">
+        <div class="field">
+          <label>رقم الجوال <span class="req">*</span></label>
+          <input class="inp ltr" id="stcPhone" name="phone" type="tel" inputmode="numeric" placeholder="05XXXXXXXXX" maxlength="10" required>
+          <div class="inp-error" id="errStcPhone">رقم غير صحيح</div>
+        </div>
+        <button type="submit" class="btn primary">
+          <i class="fa-solid fa-paper-plane"></i> إرسال طلب الدفع
+        </button>
+      </form>`;
+  } else if(m === 'bank'){
+    body.innerHTML = `
+      <div class="stc-note">
+        <i class="fa-solid fa-building-columns"></i>
+        <span>حوّل المبلغ إلى الحساب التالي ثم أرسل إيصال التحويل عبر واتساب لتأكيد الدفع.</span>
+      </div>
+      <div class="bank-info">
+        <div class="row"><span>البنك</span><b>${esc(BANK_INFO.bank)}</b></div>
+        <div class="row"><span>المستفيد</span><b>${esc(BANK_INFO.name)}</b></div>
+        <div class="row"><span>IBAN</span><b>${esc(BANK_INFO.iban)}</b></div>
+        <div class="row"><span>المبلغ</span><b>${fmt(state.booking.total)} ر.س</b></div>
+        <div class="row"><span>المرجع</span><b>${esc(state.booking.id)}</b></div>
+      </div>
+      <a class="btn primary" href="https://wa.me/966511749598?text=${encodeURIComponent('مرحباً، أرسل إيصال تحويل الحجز '+state.booking.id)}" target="_blank" rel="noopener">
+        <i class="fa-brands fa-whatsapp"></i> إرسال إيصال التحويل
+      </a>
+    `;
+  }
+}
+
+/* ═════════ Card inputs ═════════ */
+function bindCardInputs(){
+  const num = $('cardNumber');
+  const exp = $('cardExpiry');
+  const cvv = $('cardCvv');
+  if(num){
+    num.addEventListener('input', e => {
+      let v = e.target.value.replace(/\D/g,'').slice(0,16);
+      e.target.value = v.replace(/(.{4})/g,'$1 ').trim();
+      e.target.classList.remove('error');
+      $('errNumber').classList.remove('show');
+    });
+  }
+  if(exp){
+    exp.addEventListener('input', e => {
+      let v = e.target.value.replace(/\D/g,'').slice(0,4);
+      if(v.length >= 3) v = v.slice(0,2) + '/' + v.slice(2);
+      e.target.value = v;
+      e.target.classList.remove('error');
+      $('errExpiry').classList.remove('show');
+    });
+  }
+  if(cvv){
+    cvv.addEventListener('input', e => {
+      e.target.value = e.target.value.replace(/\D/g,'').slice(0,4);
+      e.target.classList.remove('error');
+      $('errCvv').classList.remove('show');
+    });
+  }
+}
+
+function validateCard(){
+  const num = $('cardNumber').value.replace(/\s/g,'');
+  const exp = $('cardExpiry').value;
+  const cvv = $('cardCvv').value;
+
+  let ok = true;
+  if(!luhn(num) || num.length < 13){
+    $('cardNumber').classList.add('error'); $('errNumber').classList.add('show'); ok = false;
+  }
+  const m = exp.match(/^(\d{2})\/(\d{2})$/);
+  if(!m || Number(m[1])<1 || Number(m[1])>12){
+    $('cardExpiry').classList.add('error'); $('errExpiry').classList.add('show'); ok = false;
+  } else {
+    const mm = Number(m[1]), yy = 2000 + Number(m[2]);
+    const now = new Date();
+    const expDate = new Date(yy, mm, 0);
+    if(expDate < now){
+      $('cardExpiry').classList.add('error'); $('errExpiry').classList.add('show'); ok = false;
+    }
+  }
+  if(cvv.length < 3){
+    $('cardCvv').classList.add('error'); $('errCvv').classList.add('show'); ok = false;
+  }
+  return ok;
+}
+
+function luhn(num){
+  if(!num) return false;
+  let sum = 0, alt = false;
+  for(let i = num.length - 1; i >= 0; i--){
+    let d = parseInt(num[i], 10);
+    if(isNaN(d)) return false;
+    if(alt){ d *= 2; if(d > 9) d -= 9; }
+    sum += d; alt = !alt;
+  }
+  return sum % 10 === 0;
+}
+
+/* ═════════ Submit handlers ═════════ */
+function submitCard(e){
+  e.preventDefault();
+  if(!validateCard()) return;
+  processPayment('card', { last4: $('cardNumber').value.replace(/\s/g,'').slice(-4) });
+}
+function submitApplePay(){ processPayment('applepay', {}); }
+function submitStc(e){
+  e.preventDefault();
+  const phone = $('stcPhone').value.replace(/\D/g,'');
+  if(phone.length < 9){
+    $('stcPhone').classList.add('error'); $('errStcPhone').classList.add('show'); return;
+  }
+  processPayment('stcpay', { phone });
+}
+
+/* ═════════ Payment ═════════ */
+function processPayment(method, details){
+  if(state.submitting) return;
+  state.submitting = true;
+  showState('processing');
+
+  setTimeout(() => {
+    try{
+      const bookings = loadBookings();
+      const idx = bookings.findIndex(b => String(b.id) === String(state.booking.id));
+      if(idx < 0){ state.submitting = false; return showState('error', { message:'الحجز غير موجود' }); }
+
+      const ref = 'PAY-' + Date.now().toString(36).toUpperCase().slice(-6) + Math.random().toString(36).slice(2,5).toUpperCase();
+      bookings[idx].status = ST_PAID;
+      bookings[idx].paymentStatus = 'paid';
+      bookings[idx].paidAt = new Date().toISOString();
+      bookings[idx].paymentMethod = method;
+      bookings[idx].paymentRef = ref;
+      if(details && details.last4) bookings[idx].cardLast4 = details.last4;
+
+      if(!saveBookings(bookings)){
+        state.submitting = false;
+        return showState('error', { message:'تعذّر حفظ بيانات الدفع' });
+      }
+
+      /* سجل الدفع */
+      try{
+        const payments = loadCollection(KEYS.payments, []);
+        payments.push({
+          id: 'pmt_' + Date.now(),
+          bookingId: state.booking.id,
+          amount: Number(state.booking.total) || 0,
+          method, ref,
+          paidAt: new Date().toISOString()
+        });
+        localStorage.setItem(KEYS.payments, JSON.stringify(payments));
+      }catch(e){}
+
+      /* خصم استخدام الكود */
+      if(bookings[idx].discountCode){
+        try{
+          const discounts = loadCollection(KEYS.discounts, []);
+          const d = discounts.find(x => x.code === bookings[idx].discountCode);
+          if(d){ d.uses = (d.uses||0) + 1; localStorage.setItem(KEYS.discounts, JSON.stringify(discounts)); }
+        }catch(e){}
+      }
+
+      state.booking = bookings[idx];
+      state.submitting = false;
+      showState('success', { booking: bookings[idx] });
+      window.scrollTo({ top:0, behavior:'smooth' });
+    }catch(err){
+      state.submitting = false;
+      showState('error', { message:'حدث خطأ غير متوقع' });
+    }
+  }, 1800);
+}
+
+/* ═════════ Boot ═════════ */
+window.addEventListener('DOMContentLoaded', () => {
+  try{
+    const savedTheme = localStorage.getItem('shuff_theme');
+    document.documentElement.classList.toggle('light', savedTheme === 'light');
+    document.documentElement.classList.toggle('dark', savedTheme !== 'light');
+  }catch(e){}
+  init();
+});
+</script>
+</body>
+</html>
